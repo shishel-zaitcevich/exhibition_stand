@@ -4,26 +4,6 @@ import { Box, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 
-// export default function Footer() {
-//   return (
-//     <Box
-//       component="footer"
-//       sx={{
-//         display: 'flex',
-//         justifyContent: 'flex-end',
-//         alignItems: 'center',
-//         gap: '75px',
-//         px: 4,
-//         py: 2,
-//       }}
-//     >
-//       <Box display="flex" flexDirection="column" gap={4}></Box>
-
-//       <img src="/img/sailboat.png" alt="sailboat" />
-//     </Box>
-//   );
-// }
-
 export default function Footer() {
   return (
     <Box
@@ -33,7 +13,6 @@ export default function Footer() {
         flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'space-between',
         alignItems: 'center',
-        maxWidth: '1320px',
         margin: '0 auto',
         p: 4,
         color: '#ffffff',
@@ -51,7 +30,7 @@ export default function Footer() {
       </Box>
 
       <Box display="flex" flexDirection="column" gap={2} alignItems={'center'}>
-        <Typography variant="h6" component="h2" sx={{ fontSize: '50px', marginBottom: '30px' }}>
+        <Typography variant="h4" component="h2" sx={{ fontSize: '50px', marginBottom: '30px' }}>
           Увидимся на выставке!
         </Typography>
 

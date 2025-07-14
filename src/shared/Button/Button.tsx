@@ -17,7 +17,7 @@ type AppButtonProps = {
 const BaseButton = styled(Button, {
   shouldForwardProp: (prop) => prop !== 'primary' && prop !== 'arrow',
 })<AppButtonProps>(({ primary, arrow }) => ({
-  height: arrow ? 55 : 42,
+  height: arrow ? 55 : 55,
   width: arrow ? 55 : 'auto',
   minWidth: arrow ? 55 : 100,
   padding: arrow ? 0 : '0 24px',

@@ -6,9 +6,8 @@ body {
 
 body {
 background-image: url(../../public/ОСНОВНОЙ.png);
-background-size: contain;
-height: 10326px;
-
+background-size: cover;
+background-repeat: no-repeat;
 
 }
 
