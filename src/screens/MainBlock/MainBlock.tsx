@@ -21,7 +21,7 @@ export default function MainBlock() {
       }}
     >
       <Box display="flex" flexDirection="column" gap={2} alignItems="flex-start" paddingTop="60px">
-        <Typography variant="h3" component="h1" sx={{ maxWidth: '548px' }}>
+        <Typography variant="h3" component="h1" sx={{ maxWidth: '550px', fontWeight: '600' }}>
           Транзас и NAVX: инновации навигации на выставке Нева-2025
         </Typography>
 

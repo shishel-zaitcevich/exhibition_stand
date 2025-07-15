@@ -21,7 +21,7 @@ const BaseButton = styled(Button, {
   width: arrow ? 55 : 'auto',
   minWidth: arrow ? 55 : 100,
   padding: arrow ? 0 : '0 24px',
-  borderRadius: arrow ? '50%' : 12,
+  borderRadius: arrow ? '8px' : 12,
   textTransform: 'none',
   fontSize: arrow ? 0 : 16,
   fontWeight: 500,
@@ -30,10 +30,14 @@ const BaseButton = styled(Button, {
   transition: 'all 0.3s ease',
   '&:hover': {
     backgroundColor: arrow ? '#031457' : primary ? '#031457' : '#2934FF',
-    color: '#ffffff',
+    stroke: '#ffffff',
     '& svg': {
       transform: arrow ? 'rotate(-45deg)' : undefined,
-      color: '#ffffff',
+      stroke: '#ffffff',
+
+      '& path': {
+        fill: '#ffffff',
+      },
     },
   },
   '& svg': {

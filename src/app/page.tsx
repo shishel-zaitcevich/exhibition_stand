@@ -1,6 +1,7 @@
 // import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 'use client';
 
+import Innovations from '@/screens/Innovations/Innovations';
 import MainBlock from '@/screens/MainBlock/MainBlock';
 import PageContainer from '@/shared/PageContainer/PageContainer';
 import PlanerkaBooking from '@/widgets/Calendly/PlanerkaBooking';
@@ -12,6 +13,7 @@ export default function Home() {
     <PageContainer>
       <Header />
       <MainBlock />
+      <Innovations />
       <PlanerkaBooking />
       <Footer />
     </PageContainer>
