@@ -37,7 +37,7 @@ export default function Innovations() {
           alignItems="center"
           gap={'80px'}
           mt={1}
-          width={'100%'}
+          // width={'100%'}
         >
           <InnovationCard
             variant="black"

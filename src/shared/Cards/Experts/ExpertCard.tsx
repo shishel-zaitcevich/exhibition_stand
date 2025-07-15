@@ -19,11 +19,29 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
         border: '1px solid #95ACF7',
         backgroundColor: 'rgba(217, 217, 217, 0)',
         position: 'relative',
-        // filter: 'blur(0.65px)',
         display: 'flex',
         alignItems: 'center',
         padding: '0 40px',
         boxSizing: 'border-box',
+        overflow: 'hidden', // Ensure the shine effect stays within bounds
+        '&:hover::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: '-100%',
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
+          animation: 'shine 1s ease-in-out',
+        },
+        '@keyframes shine': {
+          '0%': {
+            left: '-100%',
+          },
+          '100%': {
+            left: '100%',
+          },
+        },
         ...sx,
       }}
     >
