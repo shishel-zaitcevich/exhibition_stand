@@ -1,8 +1,9 @@
 // import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 'use client';
 
+import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
-import MainBlock from '@/screens/MainBlock/MainBlock';
+import MainSection from '@/screens/MainSection/MainSection';
 import PageContainer from '@/shared/PageContainer/PageContainer';
 import PlanerkaBooking from '@/widgets/Calendly/PlanerkaBooking';
 import Footer from '@/widgets/Footer/Footer';
@@ -12,8 +13,9 @@ export default function Home() {
   return (
     <PageContainer>
       <Header />
-      <MainBlock />
+      <MainSection />
       <Innovations />
+      <ExpertsSection />
       <PlanerkaBooking />
       <Footer />
     </PageContainer>

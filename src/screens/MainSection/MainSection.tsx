@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 import { AppButton } from '@/shared/Button/Button';
 import CountdownTimer from '@/features/CountdownTimer/CountdownTimer';
 
-export default function MainBlock() {
+export default function MainSection() {
   return (
     <Box
       component="main"
