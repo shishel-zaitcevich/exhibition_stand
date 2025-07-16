@@ -5,7 +5,7 @@ import { GrowthTrackingBlock } from './GrowthTrackingBlock';
 const cardStyles = {
   base: {
     width: '900px',
-    height: '540px',
+    // height: '540px',
     display: 'flex',
     flexDirection: 'column' as const,
     paddingTop: '60px',

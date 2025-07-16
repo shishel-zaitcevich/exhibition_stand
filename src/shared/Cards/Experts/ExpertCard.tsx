@@ -14,14 +14,14 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
     <Box
       sx={{
         width: '565px',
-        height: '240px',
+        height: '260px',
         borderRadius: '20px',
         border: '1px solid #95ACF7',
         backgroundColor: 'rgba(217, 217, 217, 0)',
         position: 'relative',
         display: 'flex',
-        alignItems: 'center',
-        padding: '0 40px',
+        alignItems: 'flex-start',
+        padding: '25px 40px',
         boxSizing: 'border-box',
         overflow: 'hidden', // Ensure the shine effect stays within bounds
         '&:hover::before': {
@@ -48,7 +48,7 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
       <Box
         sx={{
           minWidth: '206px',
-          height: '211px',
+          height: '210px',
           position: 'relative',
           borderRadius: '15px',
           overflow: 'hidden',
@@ -64,7 +64,16 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
           mr: 4,
         }}
       >
-        <Image src={photoSrc} alt={name} width={'206'} height={'211'} />
+        <Image
+          src={photoSrc}
+          alt={name}
+          width={'206'}
+          height={'211'}
+          style={{
+            marginTop: name === 'Никита Сиваков' ? '5px' : 0,
+            width: name === 'Никита Сиваков' ? '200px' : 206,
+          }}
+        />
       </Box>
 
       <Box display="flex" flexDirection="column">

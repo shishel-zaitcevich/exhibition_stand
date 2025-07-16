@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
 import { InnovationCard } from '@/shared/Cards/InnovationCard/InnovationCard';
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { UnitedCardInnovations } from '@/shared/Cards/InnovationCard/UnitedCardInnovations';
+import { Title } from '@/shared/Typography/Title';
 
 export default function Innovations() {
   return (
@@ -13,23 +14,25 @@ export default function Innovations() {
         justifyContent: 'space-between',
         alignItems: 'center',
         margin: '0 auto',
-        marginTop: '85px',
+        // marginTop: '85px',
         color: '#FFFFFF',
         // p: 4,
-        gap: '80px',
+        // gap: '80px',
       }}
     >
       <Box
         display="flex"
         flexDirection="column"
-        gap={'100px'}
+        // gap={'100px'}
         alignItems="center"
-        paddingTop="60px"
+        // paddingTop="60px"
         margin={' 0 auto'}
       >
-        <Typography variant="h4" component="h1" fontWeight={600}>
+        {/* <Typography variant="h4" component="h1" fontWeight={600}>
           35 лет инноваций для судоходства
-        </Typography>
+        </Typography> */}
+
+        <Title>35 лет инноваций для судоходства</Title>
 
         <Box
           display="flex"
@@ -37,6 +40,7 @@ export default function Innovations() {
           alignItems="center"
           gap={'80px'}
           mt={1}
+          marginBottom={'80px'}
           // width={'100%'}
         >
           <InnovationCard
@@ -66,8 +70,8 @@ export default function Innovations() {
             text="Разрабатывает высокоточные цифровые системы для судовождения и управления флотом."
           />
         </Box>
+        <UnitedCardInnovations />
       </Box>
-      <UnitedCardInnovations />
     </Box>
   );
 }

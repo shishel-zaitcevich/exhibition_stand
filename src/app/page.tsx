@@ -1,6 +1,5 @@
-// import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 'use client';
-
+// import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
 import MainSection from '@/screens/MainSection/MainSection';
@@ -17,6 +16,7 @@ export default function Home() {
       <Innovations />
       <ExpertsSection />
       <PlanerkaBooking />
+      {/* <CalendlyBooking /> */}
       <Footer />
     </PageContainer>
   );

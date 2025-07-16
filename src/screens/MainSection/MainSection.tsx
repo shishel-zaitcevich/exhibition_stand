@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 import { AppButton } from '@/shared/Button/Button';
 import CountdownTimer from '@/features/CountdownTimer/CountdownTimer';
+import { Paragraph } from '@/shared/Typography/Paragraph';
 
 export default function MainSection() {
   return (
@@ -21,17 +22,22 @@ export default function MainSection() {
       }}
     >
       <Box display="flex" flexDirection="column" gap={2} alignItems="flex-start" paddingTop="60px">
-        <Typography variant="h3" component="h1" sx={{ maxWidth: '550px', fontWeight: '600' }}>
+        <Typography variant="h1" sx={{ maxWidth: '550px', fontWeight: '600', fontSize: '48px' }}>
           Транзас и NAVX: инновации навигации на выставке Нева-2025
         </Typography>
 
-        <Typography
+        {/* <Typography
           variant="body2"
           sx={{ fontSize: '20px', marginBottom: '40px', maxWidth: '515px', marginTop: '20px' }}
         >
           Узнайте о последних новинках в судоходстве! Посетите наш стенд и испытайте новейшие
           технологии в действии.
-        </Typography>
+        </Typography> */}
+
+        <Paragraph sx={{ marginBottom: '40px', maxWidth: '515px', marginTop: '20px' }}>
+          Узнайте о последних новинках в судоходстве! Посетите наш стенд и испытайте новейшие
+          технологии в действии.
+        </Paragraph>
 
         <Box
           display="flex"
