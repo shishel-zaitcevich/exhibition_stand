@@ -58,9 +58,7 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
             rgba(58, 58, 58, 1) 0%,
             rgba(199, 199, 199, 1) 100%
           )`,
-          '&:hover': {
-            background: 'linear-gradient(180deg, #2934FF 0%, #031457 40%)',
-          },
+
           mr: 4,
         }}
       >

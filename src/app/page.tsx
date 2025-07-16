@@ -3,6 +3,8 @@
 import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
 import MainSection from '@/screens/MainSection/MainSection';
+import MapSection from '@/screens/MapSection/MapSection';
+import NewSection from '@/screens/NewSection/NewSection';
 import PageContainer from '@/shared/PageContainer/PageContainer';
 import PlanerkaBooking from '@/widgets/Calendly/PlanerkaBooking';
 import Footer from '@/widgets/Footer/Footer';
@@ -14,7 +16,9 @@ export default function Home() {
       <Header />
       <MainSection />
       <Innovations />
+      <NewSection />
       <ExpertsSection />
+      <MapSection />
       <PlanerkaBooking />
       {/* <CalendlyBooking /> */}
       <Footer />
