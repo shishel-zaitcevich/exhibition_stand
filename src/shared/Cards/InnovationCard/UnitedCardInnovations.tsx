@@ -5,10 +5,10 @@ import { GrowthTrackingBlock } from './GrowthTrackingBlock';
 const cardStyles = {
   base: {
     width: '900px',
-    // height: '540px',
+    height: '550px',
     display: 'flex',
     flexDirection: 'column' as const,
-    paddingTop: '60px',
+    paddingTop: '40px',
     paddingRight: '40px',
     paddingLeft: '80px',
     justifyContent: 'flex-start',
@@ -19,6 +19,7 @@ const cardStyles = {
     color: '#000000',
     boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
     textMaxWidth: '280px',
+    overflow: 'hidden',
   },
 };
 

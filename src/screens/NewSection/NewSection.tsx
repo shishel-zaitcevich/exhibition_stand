@@ -31,22 +31,23 @@ export default function NewSection() {
         >
           <Box
             sx={{
-              maxWidth: '600px',
+              maxWidth: '880px',
+              marginTop: '-80px',
             }}
           >
-            <Paragraph colorVariant="white" sx={{ fontSize: '20px' }}>
-              <Paragraph colorVariant="lightBlue" component="span">
+            <Paragraph colorVariant="white" sx={{ fontSize: '25px' }}>
+              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
                 На нашем стенде вы увидите
-              </Paragraph>
+              </Paragraph>{' '}
               новейшие разработки в <br /> области навигационных технологий{' '}
-              <Paragraph colorVariant="lightBlue" component="span">
+              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
                 — решения, которые <br />
                 задают новый стандарт в судоходстве. Мы представляем <br /> линейку готовых
                 продуктов, включая
               </Paragraph>{' '}
               навигационные <br />
               системы и серверные решения,
-              <Paragraph colorVariant="lightBlue" component="span">
+              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
                 {' '}
                 которые ранее были <br /> доступны только от зарубежных производителей.
               </Paragraph>

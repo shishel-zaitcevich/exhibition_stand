@@ -5,7 +5,7 @@ import { Title } from '@/shared/Typography/Title';
 
 export const ExpertsSection = () => {
   return (
-    <Box>
+    <Box display="flex" flexDirection="column" alignItems="center">
       <Title>Наши эксперты</Title>
       <Grid
         container
@@ -13,7 +13,8 @@ export const ExpertsSection = () => {
         direction="row"
         flexWrap="wrap"
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-between"
+        maxWidth="1250px"
       >
         {experts.map((expert, index) => (
           <Grid key={index}>

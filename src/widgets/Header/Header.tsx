@@ -13,7 +13,7 @@ export default function Header() {
         justifyContent: 'flex-end',
         alignItems: 'center',
         gap: '75px',
-        px: 4,
+
         py: 2,
       }}
     >

@@ -2,6 +2,7 @@
 // import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
+import KnowMore from '@/screens/KnowMore/KnowMore';
 import MainSection from '@/screens/MainSection/MainSection';
 import MapSection from '@/screens/MapSection/MapSection';
 import NewSection from '@/screens/NewSection/NewSection';
@@ -21,6 +22,7 @@ export default function Home() {
       <MapSection />
       <PlanerkaBooking />
       {/* <CalendlyBooking /> */}
+      <KnowMore />
       <Footer />
     </PageContainer>
   );

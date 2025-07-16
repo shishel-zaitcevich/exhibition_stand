@@ -28,8 +28,21 @@ const BaseButton = styled(Button, {
   backgroundColor: arrow ? '#ffffff' : primary ? '#2934FF' : '#031457',
   color: arrow ? '#031457' : '#ffffff',
   transition: 'all 0.3s ease',
+  overflow: 'hidden',
+
+  '&:hover::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: '-100%',
+    width: '100%',
+    height: '100%',
+    background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
+    animation: 'shine 1s ease-in-out',
+  },
   '&:hover': {
-    backgroundColor: arrow ? '#031457' : primary ? '#031457' : '#2934FF',
+    // backgroundColor: arrow ? '#031457' : primary ? '#031457' : '#2934FF',
+    backgroundColor: arrow ? '#031457' : primary,
     stroke: '#ffffff',
     '& svg': {
       transform: arrow ? 'rotate(-45deg)' : undefined,
