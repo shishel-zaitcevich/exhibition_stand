@@ -1,6 +1,5 @@
 'use client';
 import ImageSlider from '@/features/Slider/Slider';
-// import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
 import KnowMore from '@/screens/KnowMore/KnowMore';
