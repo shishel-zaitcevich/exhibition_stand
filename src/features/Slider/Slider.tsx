@@ -1,77 +1,89 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Box } from '@mui/material';
+import React from 'react';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
 import { images } from './config/images';
+import { Box, IconButton } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Title } from '@/shared/Typography/Title';
 
 export default function ImageSlider() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = (e: MouseEvent) => {
-    if (
-      activeIndex !== null &&
-      containerRef.current &&
-      !containerRef.current.contains(e.target as Node)
-    ) {
-      setActiveIndex(null);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [activeIndex]);
-
-  const handleClick = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
-    <Box
-      ref={containerRef}
-      sx={{
-        display: 'flex',
-        gap: 2,
-        overflowX: 'auto',
-        p: 2,
-        position: 'relative',
-        zIndex: 1,
-      }}
-    >
-      {images.map((src, i) => {
-        const isActive = i === activeIndex;
+    <Box>
+      <Title>Фотографии с Нева 2023</Title>
+      <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+        <Swiper
+          modules={[Navigation]}
+          slidesPerView={4}
+          spaceBetween={16}
+          navigation={{
+            nextEl: '.custom-swiper-next',
+            prevEl: '.custom-swiper-prev',
+          }}
+        >
+          {images.map((src, index) => (
+            <SwiperSlide key={index}>
+              <Box
+                component="img"
+                src={src}
+                alt={`slide-${index}`}
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  display: 'block',
+                  filter: 'grayscale(100%)',
+                  transition: 'filter 0.3s, transform 0.3s',
+                  cursor: 'pointer',
+                  borderRadius: '12px',
+                  '&:hover': {
+                    filter: 'grayscale(0%)',
+                    transform: 'scale(1.05)',
+                  },
+                }}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-        return (
-          <Box
-            key={i}
-            onClick={() => handleClick(i)}
-            component="img"
-            src={src}
-            alt={`slide-${i}`}
-            sx={{
-              width: isActive ? 'auto' : 200,
-              height: isActive ? 'auto' : 150,
-              maxWidth: isActive ? '80vw' : 200,
-              maxHeight: isActive ? '80vh' : 150,
-              transition: 'all 0.3s ease',
-              cursor: 'pointer',
-              filter: 'grayscale(100%)',
-              '&:hover': {
-                filter: 'grayscale(0%)',
-                transform: 'scale(1.05)',
-              },
-              position: isActive ? 'fixed' : 'relative',
-              top: isActive ? '50%' : 'auto',
-              left: isActive ? '50%' : 'auto',
-              transform: isActive ? 'translate(-50%, -50%) scale(2)' : 'none',
-              boxShadow: isActive ? '0px 4px 20px rgba(0,0,0,0.5)' : 'none',
-              zIndex: isActive ? 10 : 0,
-            }}
-          />
-        );
-      })}
+        {/* Кнопки навигации */}
+        <IconButton
+          className="custom-swiper-prev"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: 8,
+            transform: 'translateY(-50%)',
+            backgroundColor: 'rgba(0,0,0,0.4)',
+            color: '#fff',
+            zIndex: 10,
+            '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
+          }}
+        >
+          <ArrowBackIosNewIcon />
+        </IconButton>
+
+        <IconButton
+          className="custom-swiper-next"
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            right: 8,
+            transform: 'translateY(-50%)',
+            backgroundColor: 'rgba(0,0,0,0.4)',
+            color: '#fff',
+            zIndex: 10,
+            '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
+          }}
+        >
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 }

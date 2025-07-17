@@ -31,7 +31,7 @@ export function drawRadarFrame(
 
   ctx.clearRect(0, 0, w, h);
 
-  ctx.strokeStyle = 'rgba(3, 20, 87, 0.7)';
+  ctx.strokeStyle = 'rgba(3, 20, 87, 1)';
   ctx.lineWidth = 1;
   for (let i = 1; i <= 4; i++) {
     ctx.beginPath();
