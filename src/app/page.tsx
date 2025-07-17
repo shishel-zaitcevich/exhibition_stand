@@ -1,5 +1,5 @@
 'use client';
-// import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
+import ImageSlider from '@/features/Slider/Slider';
 import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
 import KnowMore from '@/screens/KnowMore/KnowMore';
@@ -23,7 +23,7 @@ export default function Home() {
       <ExpertsSection />
       <MapSection />
       <PlanerkaBooking />
-
+      <ImageSlider />
       <KnowMore />
       <Footer />
     </PageContainer>
