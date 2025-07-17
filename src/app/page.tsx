@@ -15,15 +15,15 @@ export default function Home() {
   return (
     <PageContainer>
       <Header />
-      {/* <MainSection /> */}
-      {/* <Innovations /> */}
-      {/* <NewSection /> */}
-      {/* <ExpertsSection /> */}
-      {/* <MapSection /> */}
-      {/* <PlanerkaBooking /> */}
+      <MainSection />
+      <Innovations />
+      <NewSection />
+      <ExpertsSection />
+      <MapSection />
+      <PlanerkaBooking />
 
-      {/* <KnowMore /> */}
-      {/* <Footer /> */}
+      <KnowMore />
+      <Footer />
     </PageContainer>
   );
 }

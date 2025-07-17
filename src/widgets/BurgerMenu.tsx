@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 import { AnchorLink } from '@/shared/AnchorLink/AnchorLink';
 import CloseIcon from '@mui/icons-material/Close';
+import { AppButton } from '@/shared/Button/Button';
 
 type BurgerMenuProps = {
   links: { href: string; label: string }[];
@@ -29,9 +30,9 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
         onClose={toggle(false)}
         PaperProps={{
           sx: {
-            backgroundColor: '#031457', // цвет фона
-            width: '80vw', // ширина 80% экрана
-            p: 3, // внутренние отступы
+            backgroundColor: '#031457',
+            width: '80vw',
+            p: 3,
           },
         }}
       >
@@ -60,6 +61,7 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
             style={{ objectFit: 'contain', position: 'absolute', zIndex: -1, top: '150px' }}
           />
         </Box>
+        <AppButton label="Регистрация" href="#" primary sx={{ marginTop: '50px' }} />
       </Drawer>
     </>
   );

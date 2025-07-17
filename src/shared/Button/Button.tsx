@@ -59,7 +59,6 @@ const BaseButton = styled(Button, {
     animation: 'shine 1s ease-in-out',
   },
   '&:hover': {
-    // backgroundColor: arrow ? '#031457' : primary ? '#031457' : '#2934FF',
     backgroundColor: arrow ? '#031457' : primary,
     stroke: '#ffffff',
     '& svg': {

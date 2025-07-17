@@ -39,15 +39,6 @@ export default function Header() {
           <AppButton label="Регистрация" href="#" primary />
         </Box>
       )}
-      {/* <Box display="flex" gap={'15px'}>
-        {navLinks.map((link, index) => (
-          <AnchorLink key={index} href={link.href}>
-            {link.label}
-          </AnchorLink>
-        ))}
-      </Box>
-
-      <AppButton label={'Регистрация'} href={'#'} primary /> */}
     </Box>
   );
 }
