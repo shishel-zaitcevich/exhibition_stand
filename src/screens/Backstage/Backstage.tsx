@@ -12,6 +12,7 @@ export const Backstage = () => {
         left: 0,
         height: '100%',
         overflow: 'hidden',
+        zIndex: -2,
       }}
     >
       <Ray offset={-200} degree={36} height={12} />

@@ -16,8 +16,8 @@ export default function RootLayout({
       <CssBaseline />
       <html lang="en">
         <body>
-          <Backstage />
           {children}
+          <Backstage />
         </body>
       </html>
     </ThemeProvider>
