@@ -38,7 +38,7 @@ export default function MapSection() {
           />
         </Box>
 
-        <Radar sx={{ position: 'absolute', left: '45%', zIndex: '-1', maxWidth: '1100px' }} />
+        {/* <Radar sx={{ position: 'absolute', left: '45%', zIndex: '-1', maxWidth: '1100px' }} /> */}
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Paragraph colorVariant="white" sx={{ fontWeight: 600, mb: 2, fontSize: '35px' }}>

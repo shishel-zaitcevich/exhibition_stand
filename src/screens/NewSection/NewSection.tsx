@@ -15,6 +15,7 @@ export default function NewSection() {
           backgroundImage: 'url(/img/imageNew.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
           '&::after': {
             content: '""',
             position: 'absolute',
@@ -31,35 +32,37 @@ export default function NewSection() {
           sx={{
             maxWidth: '1440px',
             height: '600px',
-            mx: 'auto',
-            px: 2,
-            py: 6,
+            // mx: 'auto',
+            // px: 2,
+            // py: 6,
+            paddingRight: '20px',
             display: 'flex',
             justifyContent: 'flex-end',
             alignItems: 'center',
-            position: 'relative',
+            position: 'absolute',
+            right: '20px',
             zIndex: 2,
           }}
         >
           <Box
             sx={{
               maxWidth: '870px',
-              marginTop: '-80px',
+              // marginTop: '-80px',
             }}
           >
-            <Paragraph colorVariant="white" sx={{ fontSize: '30px' }}>
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '30px' }}>
+            <Paragraph colorVariant="white" sx={{ fontSize: '25px' }}>
+              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
                 На нашем стенде вы увидите
               </Paragraph>{' '}
               новейшие разработки в <br /> области навигационных технологий{' '}
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '30px' }}>
+              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
                 — решения, которые <br />
                 задают новый стандарт в судоходстве. Мы представляем <br /> линейку готовых
                 продуктов, включая
               </Paragraph>{' '}
               навигационные <br />
               системы и серверные решения,
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '30px' }}>
+              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
                 {' '}
                 которые ранее были <br /> доступны только от зарубежных производителей.
               </Paragraph>
