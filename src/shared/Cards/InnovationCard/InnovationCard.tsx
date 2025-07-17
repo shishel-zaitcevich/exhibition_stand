@@ -8,6 +8,7 @@ import { MotionCard } from './MotionCard';
 
 interface InnovationCardProps {
   variant: 'black' | 'blue';
+  variant: 'black' | 'blue';
   logo: ReactNode;
   name: string;
   text: string;
@@ -110,6 +111,9 @@ export function InnovationCard({
 
       <Typography
         sx={{
+          mt: 3,
+          fontSize: 20,
+          fontWeight: 500,
           mt: 3,
           fontSize: 20,
           fontWeight: 500,

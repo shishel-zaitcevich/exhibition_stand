@@ -4,44 +4,52 @@ import { Box } from '@mui/material';
 
 export default function NewSection() {
   return (
-    <>
-      <Title>Новинки 2024-2026 годов</Title>
+    <Box
+      sx={{
+        position: 'relative',
+        marginTop: 12,
+        width: '100vw',
+        height: '600px',
+        marginLeft: 'calc(-50vw + 50%)',
+        backgroundImage: 'url(/img/imageNew.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed', // Enables parallax effect
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.4)', // Overlay filter
+          zIndex: 1,
+        },
+      }}
+    >
       <Box
         sx={{
+          maxWidth: '1440px',
+          height: '600px',
+          mx: 'auto',
+          px: 2,
+          py: 6,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'flex-end',
           position: 'relative',
-          width: '100vw',
-          height: '800px',
-          marginLeft: 'calc(-50vw + 50%)',
-          backgroundImage: 'url(/img/imageNew.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.4)', // фильтр: черный с прозрачностью
-            zIndex: 1,
-          },
+          zIndex: 2,
         }}
       >
-        <Box
+        <Title
           sx={{
-            maxWidth: '1440px',
-            height: '600px',
-            // mx: 'auto',
-            // px: 2,
-            // py: 6,
-            paddingRight: '20px',
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            position: 'absolute',
-            right: '20px',
-            zIndex: 2,
+            color: 'white',
+            width: '100%',
+            fontSize: { xs: '28px', md: '36px' },
+            fontWeight: 'bold',
+            mb: 8,
+            textAlign: 'center',
           }}
         >
           <Box
