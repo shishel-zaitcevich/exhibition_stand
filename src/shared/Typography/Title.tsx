@@ -12,7 +12,7 @@ export const Title = (props: TypographyProps) => {
         fontWeight: 600,
         textAlign: 'center',
         ...props.sx,
-        margin: '120px 0 80px 0',
+        margin: '140px 0 80px 0',
       }}
       {...props}
     />

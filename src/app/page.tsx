@@ -2,8 +2,11 @@
 // import CalendlyBooking from '@/widgets/Calendly/CalendlyBooking';
 import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
+import KnowMore from '@/screens/KnowMore/KnowMore';
 import MainSection from '@/screens/MainSection/MainSection';
 import { ProductsScreen } from '@/screens/Products/ProductsScreen';
+import MapSection from '@/screens/MapSection/MapSection';
+import NewSection from '@/screens/NewSection/NewSection';
 import PageContainer from '@/shared/PageContainer/PageContainer';
 import PlanerkaBooking from '@/widgets/Calendly/PlanerkaBooking';
 import Footer from '@/widgets/Footer/Footer';
@@ -16,9 +19,12 @@ export default function Home() {
       <MainSection />
       <Innovations />
       <ProductsScreen />
+      <NewSection />
       <ExpertsSection />
+      <MapSection />
       <PlanerkaBooking />
-      {/* <CalendlyBooking /> */}
+
+      <KnowMore />
       <Footer />
     </PageContainer>
   );

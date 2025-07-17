@@ -7,7 +7,7 @@ const theme = createTheme({
       dark: '#031457'
     },
     secondary: {
-      main: '#bcbcbc',
+      main: '#2934FF',
       light: '#bcbcbc'
     },
     background: {
@@ -18,6 +18,16 @@ const theme = createTheme({
   typography: {
     fontFamily: `'Roboto Slab', sans-serif`,
   },
+
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1400,
+    }
+  }
 });
 
 export default theme;

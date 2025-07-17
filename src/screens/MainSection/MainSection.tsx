@@ -26,14 +26,6 @@ export default function MainSection() {
           Транзас и NAVX: инновации навигации на выставке Нева-2025
         </Typography>
 
-        {/* <Typography
-          variant="body2"
-          sx={{ fontSize: '20px', marginBottom: '40px', maxWidth: '515px', marginTop: '20px' }}
-        >
-          Узнайте о последних новинках в судоходстве! Посетите наш стенд и испытайте новейшие
-          технологии в действии.
-        </Typography> */}
-
         <Paragraph sx={{ marginBottom: '40px', maxWidth: '515px', marginTop: '20px' }}>
           Узнайте о последних новинках в судоходстве! Посетите наш стенд и испытайте новейшие
           технологии в действии.

@@ -17,8 +17,6 @@ export default function PlanerkaBooking() {
     <Paper
       elevation={3}
       sx={{
-        p: 4,
-        mt: 5,
         mx: 'auto',
         maxWidth: '1100px',
         background: 'transparent',
@@ -27,12 +25,20 @@ export default function PlanerkaBooking() {
         zIndex: 5,
       }}
     >
-      {/* <Title>Забронируйте встречу</Title>
+      <Title>Забронируйте встречу</Title>
 
-      <Paragraph sx={{ marginBottom: '40px', maxWidth: '515px', marginTop: '20px' }}>
-        Можете забронировать переговорную комнату для ваших личных бизнес-задач и решить актуальные
-        вопросы прямо на локации.
-      </Paragraph> */}
+      <Paragraph
+        sx={{
+          maxWidth: '800px',
+          textAlign: 'center',
+          margin: '0 auto',
+          marginBottom: '60px',
+          marginTop: '-20px',
+        }}
+      >
+        Можете забронировать переговорную комнату для ваших <br />
+        личных бизнес-задач и решить актуальные вопросы прямо <br /> на локации.
+      </Paragraph>
 
       <Box
         className="app-planerka-embed"
