@@ -1,9 +1,10 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 
-import { InnovationCard } from '@/shared/Cards/InnovationCard/InnovationCard';
+// import { InnovationCard } from '@/shared/Cards/InnovationCard/InnovationCard';
 import { Box } from '@mui/material';
 import { UnitedCardInnovations } from '@/shared/Cards/InnovationCard/UnitedCardInnovations';
 import { Title } from '@/shared/Typography/Title';
+import InnovationCards from '@/widgets/InnovationCards/InnovationCards';
 
 export default function Innovations() {
   return (
@@ -43,7 +44,8 @@ export default function Innovations() {
           marginBottom={'80px'}
           // width={'100%'}
         >
-          <InnovationCard
+          <InnovationCards />
+          {/* <InnovationCard
             variant="black"
             logo={
               <Image
@@ -68,7 +70,7 @@ export default function Innovations() {
               />
             }
             text="Разрабатывает высокоточные цифровые системы для судовождения и управления флотом."
-          />
+          /> */}
         </Box>
         <UnitedCardInnovations />
       </Box>

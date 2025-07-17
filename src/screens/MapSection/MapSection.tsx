@@ -27,7 +27,6 @@ export default function MapSection() {
             display: 'inline-block',
             maxWidth: '570px',
             cursor: 'pointer',
-            // borderRadius: '12px',
           }}
         >
           <Image

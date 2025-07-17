@@ -50,7 +50,7 @@ export default function KnowMore() {
       <Box sx={{ width: { xs: '100%', md: '50%' } }}>
         <div
           className="bitrix24-form"
-          //   data-b24-form="inline/13/xwqcu9"
+          data-b24-form="inline/13/xwqcu9"
           data-skip-moving="true"
         ></div>
       </Box>

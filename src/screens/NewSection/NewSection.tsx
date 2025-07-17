@@ -15,6 +15,16 @@ export default function NewSection() {
           backgroundImage: 'url(/img/imageNew.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)', // фильтр: черный с прозрачностью
+            zIndex: 1,
+          },
         }}
       >
         <Box
@@ -27,6 +37,8 @@ export default function NewSection() {
             display: 'flex',
             justifyContent: 'flex-end',
             alignItems: 'center',
+            position: 'relative',
+            zIndex: 2,
           }}
         >
           <Box

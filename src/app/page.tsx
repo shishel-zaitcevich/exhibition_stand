@@ -18,8 +18,8 @@ export default function Home() {
       <Header />
       <MainSection />
       <Innovations />
-      <ProductsScreen />
       <NewSection />
+      <ProductsScreen />
       <ExpertsSection />
       <MapSection />
       <PlanerkaBooking />
