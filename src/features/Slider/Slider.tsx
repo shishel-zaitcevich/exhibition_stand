@@ -44,6 +44,7 @@ export default function ImageSlider() {
                   '&:hover': {
                     filter: 'grayscale(0%)',
                     transform: 'scale(1.05)',
+                    borderRadius: '12px',
                   },
                 }}
               />

@@ -18,7 +18,7 @@ const StyledAnchor = styled(MuiLink)(({ theme }) => ({
 
   '&:hover': {
     backgroundColor: 'rgba(217, 217, 217, 0.2)',
-    borderRadius: '16px',
+    borderRadius: '10px',
 
     // width: '120%',
     // height: '120%',
