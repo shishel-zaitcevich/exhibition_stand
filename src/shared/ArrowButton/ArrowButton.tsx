@@ -29,6 +29,7 @@ export const ArrowButton: React.FC<Props> = ({
         transition: 'all 0.3s ease',
         '& svg': {
             transform: active ? 'rotate(-45deg)' : undefined,
+            transition: 'all 0.3s ease',
             stroke: active ? '#ffffff' : '#031457',
 
             '& path': {
