@@ -8,7 +8,6 @@ import { MotionCard } from './MotionCard';
 
 interface InnovationCardProps {
   variant: 'black' | 'blue';
-  variant: 'black' | 'blue';
   logo: ReactNode;
   name: string;
   text: string;
@@ -25,16 +24,17 @@ const cardVariants = {
   collapsed: { width: 530 * 0.6, height: 350 },
 };
 
-const statsContainerVariants = {
-  hidden: { opacity: 0 },
+const statsContainerVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.1,
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
     },
   },
 };
-
 const statItemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
@@ -92,10 +92,8 @@ export function InnovationCard({
         {isExpanded ? (
           <Typography
             sx={{
-              mt: 3,
               fontSize: 30,
               fontWeight: 700,
-              lineHeight: '25px',
               maxWidth: '100%',
               position: 'relative',
               zIndex: 3,
@@ -114,14 +112,12 @@ export function InnovationCard({
           mt: 3,
           fontSize: 20,
           fontWeight: 500,
-          mt: 3,
-          fontSize: 20,
-          fontWeight: 500,
           lineHeight: '25px',
           maxWidth: isExpanded ? '100%' : 280,
           color: variant === 'black' ? (!isExpanded ? '#000000' : '#FFFFFF') : '#FFFFFF',
           position: 'relative',
           zIndex: 3,
+          marginTop: isExpanded ? '30px' : '60px',
         }}
       >
         {text}
@@ -137,7 +133,7 @@ export function InnovationCard({
             display: 'flex',
             flexWrap: 'wrap',
             gap: '16px',
-            marginTop: '24px',
+            marginTop: '65px',
             position: 'relative',
             zIndex: 3,
           }}
@@ -146,16 +142,30 @@ export function InnovationCard({
             <motion.div key={idx} variants={statItemVariants}>
               <Box
                 sx={{
-                  backgroundColor: 'rgba(255,255,255,0.7)',
+                  backgroundColor: 'rgba(255,255,255,0.8)',
                   padding: '12px 16px',
                   borderRadius: '20px',
                   width: '160px',
                   height: '100px',
                   color: '#000',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: variant === 'black' ? 'flex-start' : 'center',
                 }}
               >
-                <Typography fontWeight="bold">{item.value}</Typography>
-                <Typography fontSize="12px">{item.label}</Typography>
+                <Typography sx={{ fontWeight: 'bold', fontSize: '20px', textAlign: 'center' }}>
+                  {item.value}
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: '12px',
+                    lineHeight: '15px',
+                    textAlign: variant === 'black' ? 'flex-start' : 'center',
+                    position: 'relative',
+                  }}
+                >
+                  {item.label}
+                </Typography>
               </Box>
             </motion.div>
           ))}

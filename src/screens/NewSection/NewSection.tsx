@@ -1,5 +1,5 @@
 import { Paragraph } from '@/shared/Typography/Paragraph';
-import { Title } from '@/shared/Typography/Title';
+
 import { Box } from '@mui/material';
 
 export default function NewSection() {
@@ -42,42 +42,31 @@ export default function NewSection() {
           zIndex: 2,
         }}
       >
-        <Title
+        <Box
           sx={{
-            color: 'white',
-            width: '100%',
-            fontSize: { xs: '28px', md: '36px' },
-            fontWeight: 'bold',
-            mb: 8,
-            textAlign: 'center',
+            maxWidth: '870px',
+            // marginTop: '-80px', // Закомментировано, так как неактивно
           }}
         >
-          <Box
-            sx={{
-              maxWidth: '870px',
-              // marginTop: '-80px',
-            }}
-          >
-            <Paragraph colorVariant="white" sx={{ fontSize: '25px' }}>
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
-                На нашем стенде вы увидите
-              </Paragraph>{' '}
-              новейшие разработки в <br /> области навигационных технологий{' '}
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
-                — решения, которые <br />
-                задают новый стандарт в судоходстве. Мы представляем <br /> линейку готовых
-                продуктов, включая
-              </Paragraph>{' '}
-              навигационные <br />
-              системы и серверные решения,
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
-                {' '}
-                которые ранее были <br /> доступны только от зарубежных производителей.
-              </Paragraph>
+          <Paragraph colorVariant="white" sx={{ fontSize: '25px' }}>
+            <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
+              На нашем стенде вы увидите
+            </Paragraph>{' '}
+            новейшие разработки в <br /> области навигационных технологий{' '}
+            <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
+              — решения, которые <br />
+              задают новый стандарт в судоходстве. Мы представляем <br /> линейку готовых продуктов,
+              включая
+            </Paragraph>{' '}
+            навигационные <br />
+            системы и серверные решения,
+            <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
+              {' '}
+              которые ранее были <br /> доступны только от зарубежных производителей.
             </Paragraph>
-          </Box>
+          </Paragraph>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
