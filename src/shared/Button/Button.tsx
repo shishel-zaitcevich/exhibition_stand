@@ -5,6 +5,7 @@ import { Button, styled } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 import { ArrowIcon } from '../Icons/Arrow';
+import theme from '@/app/theme';
 
 type AppButtonProps = {
   label?: string;
@@ -12,6 +13,7 @@ type AppButtonProps = {
   onClick?: () => void;
   primary?: boolean;
   arrow?: boolean;
+  sx?: object;
 };
 
 const BaseButton = styled(Button, {
@@ -29,6 +31,22 @@ const BaseButton = styled(Button, {
   color: arrow ? '#031457' : '#ffffff',
   transition: 'all 0.3s ease',
   overflow: 'hidden',
+
+  [theme.breakpoints.down('lg')]: {
+    height: 40,
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    height: 40,
+    fontSize: arrow ? 0 : 14,
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    height: 32,
+    borderRadius: '8px',
+    minWidth: arrow ? 40 : 80,
+    fontSize: arrow ? 0 : 14,
+  },
 
   '&:hover::before': {
     content: '""',

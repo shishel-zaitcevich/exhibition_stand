@@ -1,10 +1,13 @@
 import { AnchorLink } from '@/shared/AnchorLink/AnchorLink';
 import { AppButton } from '@/shared/Button/Button';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import React from 'react';
 import { navLinks } from './config/links';
+import BurgerMenu from '../BurgerMenu';
 
 export default function Header() {
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Box
       component="header"
@@ -12,12 +15,31 @@ export default function Header() {
         display: 'flex',
         justifyContent: 'flex-end',
         alignItems: 'center',
-        gap: '75px',
-
         py: 2,
       }}
     >
-      <Box display="flex" gap={4}>
+      {isMd ? (
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          width={'100%'}
+          gap="15px"
+        >
+          <AppButton label="Регистрация" href="#" primary />
+          <BurgerMenu links={navLinks} />
+        </Box>
+      ) : (
+        <Box display="flex" alignItems="center" gap="15px">
+          {navLinks.map((link, index) => (
+            <AnchorLink key={index} href={link.href}>
+              {link.label}
+            </AnchorLink>
+          ))}
+          <AppButton label="Регистрация" href="#" primary />
+        </Box>
+      )}
+      {/* <Box display="flex" gap={'15px'}>
         {navLinks.map((link, index) => (
           <AnchorLink key={index} href={link.href}>
             {link.label}
@@ -25,7 +47,7 @@ export default function Header() {
         ))}
       </Box>
 
-      <AppButton label={'Регистрация'} href={'#'} primary />
+      <AppButton label={'Регистрация'} href={'#'} primary /> */}
     </Box>
   );
 }

@@ -16,26 +16,26 @@ export default function useRadar(
 
     const targets: Target[] = [];
     let angle = 0;
+    let animationId: number;
 
     const resizeCanvas = () => {
       canvas.width = container.clientWidth;
       canvas.height = container.clientHeight;
     };
 
+    const render = () => {
+      drawRadarFrame(ctx, canvas.width, canvas.height, angle, targets, createTarget);
+      angle = (angle + 0.05) % (2 * Math.PI);
+      animationId = requestAnimationFrame(render);
+    };
+
     window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
-
-    function render() {
-        if (!ctx) return; 
-        if(canvas !== null) {
-        drawRadarFrame(ctx, canvas.width, canvas.height, angle, targets, createTarget);
-        angle = (angle + 0.05) % (2 * Math.PI);
-        requestAnimationFrame(render);
-        }
-    }
-
     render();
 
-    return () => window.removeEventListener('resize', resizeCanvas);
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationId); // ✅ чистим при размонтировании
+    };
   }, [canvasRef, containerRef]);
 }
