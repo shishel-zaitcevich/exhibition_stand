@@ -26,6 +26,11 @@ export const Backstage = () => {
       <Ray offset={-190} degree={-66} height={22} direction="bottom" />
       <Ray offset={-250} degree={-10} direction="bottom" />
 
+      <Ray offset={2710} degree={42} accent />
+      <Ray offset={2730} degree={79} />
+      <Ray offset={2690} degree={66} height={22} />
+      <Ray offset={2650} degree={10} />
+
       <Flashing x={-40} y={4} />
       <Flashing x={50} y={20} />
       <Flashing x={-20} y={50} degree={20} />
