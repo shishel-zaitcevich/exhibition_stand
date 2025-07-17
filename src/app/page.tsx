@@ -5,6 +5,7 @@ import { ExpertsSection } from '@/screens/Experts/ExpertsSection';
 import Innovations from '@/screens/Innovations/Innovations';
 import KnowMore from '@/screens/KnowMore/KnowMore';
 import MainSection from '@/screens/MainSection/MainSection';
+import { ProductsScreen } from '@/screens/Products/ProductsScreen';
 import MapSection from '@/screens/MapSection/MapSection';
 import NewSection from '@/screens/NewSection/NewSection';
 import PageContainer from '@/shared/PageContainer/PageContainer';
@@ -18,6 +19,7 @@ export default function Home() {
       <Header />
       <MainSection />
       <Innovations />
+      <ProductsScreen />
       <NewSection />
       <ExpertsSection />
       <MapSection />
