@@ -5,10 +5,10 @@ import { GrowthTrackingBlock } from './GrowthTrackingBlock';
 const cardStyles = {
   base: {
     width: '900px',
-    // height: '540px',
+    height: '550px',
     display: 'flex',
     flexDirection: 'column' as const,
-    paddingTop: '60px',
+    paddingTop: '40px',
     paddingRight: '40px',
     paddingLeft: '80px',
     justifyContent: 'flex-start',
@@ -19,6 +19,7 @@ const cardStyles = {
     color: '#000000',
     boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
     textMaxWidth: '280px',
+    overflow: 'hidden',
   },
 };
 
@@ -33,7 +34,8 @@ export const UnitedCardInnovations = () => {
         component="h1"
         sx={{ fontWeight: '700', fontSize: '28px', maxWidth: '834px', lineHeight: '35px' }}
       >
-        Синергия технологий для комплексных решений в судоходстве
+        TRANSAS и NAVX — это не просто сотрудничество.
+        <br /> Это синергия технологий и опыта.
       </Typography>
       <Typography
         variant="body2"
@@ -45,11 +47,17 @@ export const UnitedCardInnovations = () => {
           lineHeight: '30px',
         }}
       >
-        На нашем стенде вы сможете увидеть самые современные решения для навигации. Мы представим
-        инновационные технологии, которые изменят подход к судоходству.
+        Когда разработки дополняются экспертизой и инфраструктурой — рождаются комплексные решения,
+        готовые к реальной работе на флоте.
       </Typography>
       <Box position="relative" display="flex">
-        <Box position="relative" width="360px" height="200px" borderRadius="16px" overflow="hidden">
+        <Box
+          position="relative"
+          width={'380px'}
+          height="250px"
+          borderRadius="16px"
+          overflow="hidden"
+        >
           <Box
             sx={{
               background: `
@@ -92,9 +100,9 @@ export const UnitedCardInnovations = () => {
         <Image
           src="/img/graph.png"
           alt="tanker"
-          width={500}
-          height={300}
-          style={{ objectFit: 'contain', position: 'relative', bottom: '85px', right: '20px' }}
+          width={600}
+          height={350}
+          style={{ objectFit: 'contain', position: 'relative', bottom: '85px', right: '100px' }}
         />
       </Box>
     </Box>

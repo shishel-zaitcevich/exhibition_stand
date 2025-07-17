@@ -3,22 +3,22 @@ import CheckIcon from '@mui/icons-material/CheckBox';
 
 export const GrowthTrackingBlock = () => {
   const items = [
-    '100% точность в любое время',
-    'Мониторинг статистики и роста',
-    'Начните развиваться прямо сейчас',
+    'Сквозной цикл: от разработки до внедрения',
+    'Точная интеграция всех компонентов',
+    'Быстрый запуск решений под задачи клиента',
   ];
 
   return (
-    <Box sx={{ color: '#FFFFFF', maxWidth: 420 }}>
+    <Box>
       <Typography variant="h6" sx={{ fontWeight: 700, mb: 2 }}>
-        Отслеживание роста
+        Две компетенции. Один результат
       </Typography>
 
-      <Stack spacing={1.5}>
+      <Stack spacing={1} marginTop={'30px'} marginLeft={'20px'} maxWidth={'330px'}>
         {items.map((item, index) => (
           <Box key={index} display="flex" alignItems="center">
             <CheckIcon sx={{ mr: 1, color: '#FFFFFF' }} />
-            <Typography>{item}</Typography>
+            <Typography fontSize="15px">{item}</Typography>
           </Box>
         ))}
       </Stack>

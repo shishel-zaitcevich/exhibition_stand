@@ -12,6 +12,7 @@ export const Backstage = () => {
         left: 0,
         height: '100%',
         overflow: 'hidden',
+        zIndex: -100,
       }}
     >
       <Ray offset={-200} degree={36} height={12} />
@@ -25,9 +26,9 @@ export const Backstage = () => {
       <Ray offset={-190} degree={-66} height={22} direction="bottom" />
       <Ray offset={-250} degree={-10} direction="bottom" />
 
-      <Flashing x={-40} y={4}/>
-      <Flashing x={50} y={20}/>
-      <Flashing x={-20} y={50} degree={20}/>
+      <Flashing x={-40} y={4} />
+      <Flashing x={50} y={20} />
+      <Flashing x={-20} y={50} degree={20} />
     </Box>
   );
 };
