@@ -42,15 +42,19 @@ export default function MapSection() {
         <Radar sx={{ position: 'absolute', left: '45%', zIndex: '-1', maxWidth: '1100px' }} />
 
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Paragraph colorVariant="white" sx={{ fontWeight: 600, mb: 2, fontSize: '30px' }}>
+          <Paragraph colorVariant="white" sx={{ fontWeight: 600, mb: 2, fontSize: '35px' }}>
             Стенд F5 245
           </Paragraph>
-          <Paragraph colorVariant="lightBlue" sx={{ textAlign: 'center' }}>
+          <Paragraph colorVariant="lightBlue" sx={{ textAlign: 'center', fontSize: '30px' }}>
             Выставка пройдёт <br />с 10:00 до 18:00
           </Paragraph>
-          <Paragraph>c 23 по 26 сентября 2025 года</Paragraph>
-          <Paragraph colorVariant="lightBlue">в Санкт-Петербурге,</Paragraph>
-          <Paragraph>КВЦ Экспофорум.</Paragraph>
+          <Paragraph sx={{ textAlign: 'center', fontSize: '30px' }}>
+            c 23 по 26 сентября 2025 года
+          </Paragraph>
+          <Paragraph colorVariant="lightBlue" sx={{ textAlign: 'center', fontSize: '30px' }}>
+            в Санкт-Петербурге,
+          </Paragraph>
+          <Paragraph sx={{ textAlign: 'center', fontSize: '30px' }}>КВЦ Экспофорум.</Paragraph>
         </Box>
       </Box>
     </Box>
