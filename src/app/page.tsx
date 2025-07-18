@@ -19,16 +19,16 @@ export default function Home() {
     <PageContainer>
       <Header />
       <MainSection />
-      {/* <Innovations /> */}
+      <Innovations />
       <NewSection />
       <ProductsScreen />
       {/* <ProductList /> */}
       <ExpertsSection />
-      {/* <MapSection /> */}
-      {/* <PlanerkaBooking /> */}
-      {/* <ImageSlider /> */}
-      {/* <KnowMore /> */}
-      {/* <Footer /> */}
+      <MapSection />
+      <PlanerkaBooking />
+      <ImageSlider />
+      <KnowMore />
+      <Footer />
     </PageContainer>
   );
 }
