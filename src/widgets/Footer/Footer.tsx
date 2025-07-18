@@ -8,6 +8,7 @@ export default function Footer() {
   return (
     <Box
       component="footer"
+      id={'contacts'}
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', md: 'row' },

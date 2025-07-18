@@ -18,6 +18,7 @@ export default function KnowMore() {
         gap: 4,
         margin: '80px 0',
       }}
+      id={'register'}
     >
       <Grid size={{ xs: 12, lg: 6 } }>
         <Title

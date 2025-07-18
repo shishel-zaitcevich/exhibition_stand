@@ -7,16 +7,18 @@ import Link from 'next/link';
 
 export default function MapSection() {
   return (
-    <Box>
+    <Box overflow={'hidden'} id={'map'}>
       <Title>Как найти наш стенд</Title>
 
       <Box
+        maxWidth={'1250px'}
         display="flex"
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={'160px'}
         alignItems="center"
-        justifyContent={'center'}
+        justifyContent={'space-between'}
         position={'relative'}
+        margin={'0 auto'}
       >
         <Box
           component={Link}
@@ -38,9 +40,17 @@ export default function MapSection() {
           />
         </Box>
 
-        <Radar sx={{ position: 'absolute', left: '45%', zIndex: '-1', maxWidth: '1100px' }} />
+        <Radar sx={{ position: 'absolute', left: '33%', zIndex: '-1', maxWidth: '1100px' }} />
 
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            position: 'absolute',
+            right: '6%',
+          }}
+        >
           <Paragraph colorVariant="white" sx={{ fontWeight: 600, mb: 2, fontSize: '35px' }}>
             Стенд F5 245
           </Paragraph>

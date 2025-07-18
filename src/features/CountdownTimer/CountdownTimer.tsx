@@ -33,7 +33,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <Box display="flex" gap={2}>
+    <Box display="flex" gap={2} position={'absolute'} bottom={'-20.02px'}>
       {timeUnits.map((unit, index) => (
         <Box key={index} textAlign="center">
           <Box
