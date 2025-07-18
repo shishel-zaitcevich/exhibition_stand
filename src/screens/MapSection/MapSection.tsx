@@ -12,15 +12,12 @@ export default function MapSection() {
 
       <Box
         maxWidth={'1250px'}
-        maxWidth={'1250px'}
         display="flex"
         flexDirection={{ xs: 'column', md: 'row' }}
         gap={'160px'}
         alignItems="center"
         justifyContent={'space-between'}
-        justifyContent={'space-between'}
         position={'relative'}
-        margin={'0 auto'}
         margin={'0 auto'}
       >
         <Box
@@ -44,17 +41,7 @@ export default function MapSection() {
         </Box>
 
         <Radar sx={{ position: 'absolute', left: '33%', zIndex: '-1', maxWidth: '1100px' }} />
-        <Radar sx={{ position: 'absolute', left: '33%', zIndex: '-1', maxWidth: '1100px' }} />
 
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            position: 'absolute',
-            right: '6%',
-          }}
-        >
         <Box
           sx={{
             display: 'flex',
