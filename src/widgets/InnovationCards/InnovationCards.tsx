@@ -13,7 +13,7 @@ export default function InnovationCards() {
       variant: 'black' as const,
       logo: <Logo logoSrc={'/img/logo/transas.png'} />,
       name: 'ТРАНЗАС',
-      href: 'transas.ru',
+      href: 'https://transas.ru/',
       text: 'Многолетний опыт создания программно-аппаратных комплексов, интеграции, поддержки и управления жизненным циклом продуктов',
       backgroundImage: '/img/lightCard.png',
       stats: [
@@ -26,7 +26,7 @@ export default function InnovationCards() {
       variant: 'blue' as const,
       logo: <Logo logoSrc={'/img/logo/navx.png'} />,
       name: 'NAVX',
-      href: 'navx.ru',
+      href: 'https://navx.ru/',
       text: 'Разрабатывает высокоточные цифровые системы для судовождения и управления флотом',
       backgroundImage: '/img/darkCard.png',
       stats: [

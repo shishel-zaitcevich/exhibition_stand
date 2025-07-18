@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { AnchorLink } from '@/shared/AnchorLink/AnchorLink';
 import CloseIcon from '@mui/icons-material/Close';
 import { AppButton } from '@/shared/Button/Button';
+import theme from '@/app/theme';
 
 type BurgerMenuProps = {
   links: { href: string; label: string }[];
@@ -33,10 +34,16 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
             backgroundColor: '#031457',
             width: '80vw',
             p: 3,
+            [theme.breakpoints.down('md')]: {
+              overflow: 'hidden',
+            },
+            [theme.breakpoints.down('sm')]: {
+              width: '100vw',
+            },
           },
         }}
       >
-        <Box display="flex" justifyContent="flex-end">
+        <Box display="flex" justifyContent="flex-end" position={'relative'}>
           <IconButton onClick={toggle(false)} sx={{ color: '#fff' }}>
             <CloseIcon />
           </IconButton>
@@ -45,23 +52,42 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
           display="flex"
           flexDirection="column"
           gap={'20px'}
-          sx={{ paddingTop: '40px', position: ' relative' }}
+          sx={{
+            paddingTop: '40px',
+            position: ' relative',
+            [theme.breakpoints.down('md')]: {
+              marginBottom: '50px',
+              gap: '5px',
+            },
+          }}
         >
           {links.map((link, i) => (
             <AnchorLink key={i} href={link.href}>
               {link.label}
             </AnchorLink>
           ))}
-
-          <Image
-            src="/img/sys.png"
-            alt="system"
-            width={280}
-            height={400}
-            style={{ objectFit: 'contain', position: 'absolute', zIndex: -1, top: '150px' }}
-          />
         </Box>
-        <AppButton label="Регистрация" href="#" primary sx={{ marginTop: '50px' }} />
+        <Image
+          src="/img/sys.png"
+          alt="system"
+          width={450}
+          height={400}
+          style={{
+            objectFit: 'contain',
+            position: 'absolute',
+            zIndex: -1,
+            top: '150px',
+            right: '-40px',
+          }}
+        />
+        <AppButton
+          label="Регистрация"
+          href="#"
+          primary
+          sx={{
+            marginTop: '50px',
+          }}
+        />
       </Drawer>
     </>
   );

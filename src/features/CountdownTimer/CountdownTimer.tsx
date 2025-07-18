@@ -33,27 +33,78 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <Box display="flex" gap={2} position={'absolute'} bottom={'-20.02px'}>
+    <Box
+      display="flex"
+      gap={2}
+      position={'absolute'}
+      bottom={'-20.02px'}
+      sx={{
+        bottom: {
+          xs: '20.02px',
+          sm: '0px',
+          md: '70px',
+          xl: '-20px',
+        },
+
+        left: {
+          md: '60%',
+          xs: '20px',
+        },
+
+        right: {
+          md: 0,
+        },
+      }}
+    >
       {timeUnits.map((unit, index) => (
         <Box key={index} textAlign="center">
           <Box
             sx={{
-              width: 111,
-              height: 55,
               backgroundColor: '#031457',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               borderRadius: 2,
+
+              width: {
+                xs: 60,
+                sm: 70,
+                // md:
+                lg: 90,
+                xl: 111,
+              },
+
+              height: {
+                xs: 40,
+                lg: 40,
+                xl: 55,
+              },
             }}
           >
-            <Typography variant="h5" sx={{ color: '#fff', fontWeight: 600 }}>
+            <Typography
+              variant="h5"
+              sx={{
+                color: '#fff',
+                fontWeight: 600,
+                fontSize: {
+                  xs: '18px',
+                },
+              }}
+            >
               {unit.value.toString().padStart(2, '0')}
             </Typography>
           </Box>
           <Typography
             variant="body2"
-            sx={{ color: '#fff', mt: 1, textTransform: 'uppercase', fontWeight: 600 }}
+            sx={{
+              color: '#fff',
+              mt: 1,
+              textTransform: 'uppercase',
+              fontWeight: 600,
+              fontSize: {
+                xs: '12px',
+              },
+            }}
           >
             {unit.label}
           </Typography>

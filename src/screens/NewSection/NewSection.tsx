@@ -58,19 +58,34 @@ export default function NewSection() {
           }}
         >
           <Box sx={{ maxWidth: '870px' }}>
-            <Paragraph colorVariant="white" sx={{ fontSize: '25px' }}>
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
+            <Paragraph
+              colorVariant="white"
+              sx={{ fontSize: { xs: '20px', sm: '20px', md: '25px' } }}
+            >
+              <Paragraph
+                colorVariant="lightBlue"
+                component="span"
+                sx={{ fontSize: { xs: '20px', sm: '20px', md: '25px' } }}
+              >
                 На нашем стенде вы увидите
               </Paragraph>{' '}
               новейшие разработки в <br /> области навигационных технологий{' '}
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
+              <Paragraph
+                colorVariant="lightBlue"
+                component="span"
+                sx={{ fontSize: { xs: '20px', sm: '20px', md: '25px' } }}
+              >
                 — решения, которые <br />
                 задают новый стандарт в судоходстве. Мы представляем <br /> линейку готовых
                 продуктов, включая
               </Paragraph>{' '}
               навигационные <br />
               системы и серверные решения,
-              <Paragraph colorVariant="lightBlue" component="span" sx={{ fontSize: '25px' }}>
+              <Paragraph
+                colorVariant="lightBlue"
+                component="span"
+                sx={{ fontSize: { xs: '20px', sm: '20px', md: '25px' } }}
+              >
                 {' '}
                 которые ранее были <br /> доступны только от зарубежных производителей.
               </Paragraph>
