@@ -2,6 +2,7 @@
 import { InnovationCard } from '@/shared/Cards/InnovationCard/InnovationCard';
 import { Logo } from '@/shared/Logos/Logo';
 import { Box } from '@mui/material';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function InnovationCards() {
@@ -11,17 +12,19 @@ export default function InnovationCards() {
     {
       variant: 'black' as const,
       logo: <Logo logoSrc={'/img/logo/transas.png'} />,
+      name: 'ТРАНЗАС',
       text: 'Многолетний опыт создания программно-аппаратных комплексов, интеграции, поддержки и управления жизненным циклом продуктов',
       backgroundImage: '/img/lightCard.png',
       stats: [
-        { label: 'СУДС', value: '250' },
-        { label: 'Электронных карт поставлено пользователям', value: '13000+' },
-        { label: 'Оборудовано морского оборудования', value: '3 млн+' },
+        { label: 'Береговых систем СУДС ', value: '250' },
+        { label: 'Судов оснащено морским оборудованием', value: '13000+' },
+        { label: 'Электронных карт поставлено пользователям.', value: '3 млн+' },
       ],
     },
     {
       variant: 'blue' as const,
       logo: <Logo logoSrc={'/img/logo/navx.png'} />,
+      name: 'NAVX',
       text: 'Разрабатывает высокоточные цифровые системы для судовождения и управления флотом',
       backgroundImage: '/img/darkCard.png',
       stats: [
@@ -41,13 +44,14 @@ export default function InnovationCards() {
   return (
     <Box display="flex" gap={4} justifyContent="center">
       {cards.map((c, i) => (
-        <InnovationCard
-          key={i}
-          {...c}
-          state={getState(i)}
-          onHoverStart={() => setHovered(i)}
-          onHoverEnd={() => setHovered(null)}
-        />
+        <Link key={i} href={''} style={{ textDecoration: 'none', color: '#FFF' }}>
+          <InnovationCard
+            {...c}
+            state={getState(i)}
+            onHoverStart={() => setHovered(i)}
+            onHoverEnd={() => setHovered(null)}
+          />
+        </Link>
       ))}
     </Box>
   );

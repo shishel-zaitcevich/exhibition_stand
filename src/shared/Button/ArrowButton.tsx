@@ -23,9 +23,6 @@ const StyledArrowButton = styled(Button)<{ isHover: boolean }>(({ isHover, theme
     fontSize: 28,
     transform: isHover ? 'rotate(-45deg)' : 'rotate(0)',
     transition: 'transform 0.3s ease, fill 0.3s ease',
-    // '& path': {
-    //   fill: isHover ? '#ffffff' : '#031457',
-    // },
   },
 
   [theme.breakpoints.down('lg')]: {
@@ -39,24 +36,8 @@ const StyledArrowButton = styled(Button)<{ isHover: boolean }>(({ isHover, theme
 }));
 
 export const ArrowButton: React.FC<ArrowButtonProps> = ({ onClick, isHover }) => {
-  //   const [isHover, setIsHover] = useState(false);
-  console.log(isHover);
   return (
-    <StyledArrowButton
-      onClick={onClick}
-      isHover={isHover}
-      //   onMouseEnter={() => setIsHover(true)}
-      //   onMouseLeave={() => setIsHover(false)}
-      // sx={{
-      //   backgroundColor: isHover ? '#031457' : '#ffffff',
-      //   '& svg': {
-      //     transform: isHover ? 'rotate(-45deg)' : 'rotate(0)',
-      //     path: {
-      //       fill: isHover ? '#ffffff' : '#031457',
-      //     },
-      //   },
-      // }}
-    >
+    <StyledArrowButton onClick={onClick} isHover={isHover}>
       <ArrowIcon />
     </StyledArrowButton>
   );
