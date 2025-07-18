@@ -31,7 +31,7 @@ export function drawRadarFrame(
 
   ctx.clearRect(0, 0, w, h);
 
-  ctx.strokeStyle = 'rgba(3, 20, 87, 1)';
+  ctx.strokeStyle = 'rgba(1, 26, 35, 1)';
   ctx.lineWidth = 1;
   for (let i = 1; i <= 4; i++) {
     ctx.beginPath();
@@ -54,14 +54,16 @@ export function drawRadarFrame(
   ctx.beginPath();
   ctx.moveTo(cx, cy);
   ctx.lineTo(endX, endY);
-  ctx.strokeStyle = `rgba(41, 52, 255, ${alpha})`;
+  // ctx.strokeStyle = `rgba(41, 52, 255, ${alpha})`;
+  ctx.strokeStyle = `rgba(12, 59, 80, ${alpha})`;
   ctx.lineWidth = 2;
   ctx.stroke();
 
   ctx.beginPath();
   ctx.moveTo(cx, cy);
   ctx.lineTo(endX, endY);
-    ctx.strokeStyle = `rgba(41, 52, 255, ${alpha * 0.4})`;
+    // ctx.strokeStyle = `rgba(41, 52, 255, ${alpha * 0.4})`;
+      ctx.strokeStyle = `rgba(12, 59, 80, ${alpha * 0.4})`;
   ctx.lineWidth = 4;
   ctx.stroke();
 
@@ -76,7 +78,8 @@ export function drawRadarFrame(
     }
     ctx.beginPath();
     ctx.arc(t.x, t.y, 3, 0, 2 * Math.PI);
-    ctx.fillStyle = `rgba(41, 52, 255, ${t.life / 120})`;
+    // ctx.fillStyle = `rgba(41, 52, 255, ${t.life / 120})`;
+     ctx.fillStyle = `rgba(218, 207, 84, ${t.life / 120})`;
     ctx.fill();
   }
 }

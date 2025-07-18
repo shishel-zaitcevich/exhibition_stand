@@ -11,7 +11,8 @@ import PageContainer from '@/shared/PageContainer/PageContainer';
 import PlanerkaBooking from '@/widgets/Calendly/PlanerkaBooking';
 import Footer from '@/widgets/Footer/Footer';
 import Header from '@/widgets/Header/Header';
-import { ProductList } from '@/screens/Products/ProductsTest';
+
+import { ProductsScreen } from '@/screens/Products/ProductsScreen';
 
 export default function Home() {
   return (
@@ -20,8 +21,8 @@ export default function Home() {
       <MainSection />
       <Innovations />
       <NewSection />
-      {/* <ProductsScreen /> */}
-      <ProductList />
+      <ProductsScreen />
+      {/* <ProductList /> */}
       <ExpertsSection />
       <MapSection />
       <PlanerkaBooking />

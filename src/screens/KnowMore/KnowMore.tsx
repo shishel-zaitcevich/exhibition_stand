@@ -25,6 +25,7 @@ export default function KnowMore() {
         gap: 4,
         marginBottom: '80px',
       }}
+      id={'register'}
     >
       <Box sx={{ width: { xs: '100%', md: '50%' } }}>
         <Title

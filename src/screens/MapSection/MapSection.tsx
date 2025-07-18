@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function MapSection() {
   return (
-    <Box overflow={'hidden'}>
+    <Box overflow={'hidden'} id={'map'}>
       <Title>Как найти наш стенд</Title>
 
       <Box

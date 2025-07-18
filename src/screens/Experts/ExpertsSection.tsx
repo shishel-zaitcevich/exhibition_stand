@@ -5,7 +5,7 @@ import { Title } from '@/shared/Typography/Title';
 
 export const ExpertsSection = () => {
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box display="flex" flexDirection="column" alignItems="center" id={'experts'}>
       <Title>Наши эксперты</Title>
       <Grid
         container

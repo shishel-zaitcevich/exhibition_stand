@@ -25,6 +25,7 @@ const StyledButton = styled(Button)<{ primary: boolean }>(({ primary, theme }) =
   color: '#ffffff',
   transition: 'all 0.3s ease',
   overflow: 'hidden',
+  position: 'relative',
 
   '&:hover::before': {
     content: '""',
@@ -36,9 +37,15 @@ const StyledButton = styled(Button)<{ primary: boolean }>(({ primary, theme }) =
     background: 'linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent)',
     animation: 'shine 1s ease-in-out',
   },
-  // '&:hover': {
-  //   backgroundColor: primary ? '#031457' : '#2934FF',
-  // },
+
+  '@keyframes shine': {
+    '0%': {
+      left: '-100%',
+    },
+    '100%': {
+      left: '100%',
+    },
+  },
 
   [theme.breakpoints.down('lg')]: {
     height: 40,
@@ -59,5 +66,20 @@ export const AppButton: React.FC<AppButtonProps> = ({ label, href, onClick, prim
     </StyledButton>
   );
 
-  return href ? <Link href={href}>{button}</Link> : button;
+  // Если href начинается с #, то это якорная ссылка
+  if (href && href.startsWith('#')) {
+    return (
+      <a href={href} style={{ textDecoration: 'none' }}>
+        {button}
+      </a>
+    );
+  }
+
+  // Если href существует и не является якорной ссылкой, используем Link
+  if (href) {
+    return <Link href={href}>{button}</Link>;
+  }
+
+  // Если href нет, возвращаем просто кнопку
+  return button;
 };
