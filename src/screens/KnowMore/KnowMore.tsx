@@ -22,6 +22,7 @@ export default function KnowMore() {
       id={'register'}
     >
       <Grid size={{ xs: 12, lg: 6 }}>
+      <Grid size={{ xs: 12, lg: 6 }}>
         <Title
           sx={{
             textAlign: 'left',
@@ -41,7 +42,9 @@ export default function KnowMore() {
           договоримся о встрече на выставке.
         </Paragraph>
       </Grid>
+      </Grid>
 
+      <Grid size={{ xs: 12, lg: 6 }}>
       <Grid size={{ xs: 12, lg: 6 }}>
         <BitrixScript />
       </Grid>
