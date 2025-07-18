@@ -38,6 +38,7 @@ export default function Innovations() {
 
   return (
     <Box
+      ref={ref}
       sx={{
         position: 'relative',
         display: 'flex',
@@ -64,10 +65,9 @@ export default function Innovations() {
       </motion.div>
 
       <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 100, scale: 1 }}
+        initial={{ opacity: 0, y: 0, scale: 1 }}
         animate={
-          inViewForward ? { opacity: 1, y: -360, scale: 1.05 } : { opacity: 0, y: 100, scale: 1 }
+          inViewForward ? { opacity: 1, y: -450, scale: 1.05 } : { opacity: 0, y: 100, scale: 1 }
         }
         transition={{ duration: 0.6, ease: 'easeInOut' }}
         style={{

@@ -1,17 +1,37 @@
 import { Paragraph } from '@/shared/Typography/Paragraph';
 import { Title } from '@/shared/Typography/Title';
 import { Box } from '@mui/material';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function KnowMore() {
+  const formRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
+    // Создаём контейнер с нужными data-* атрибутами
+    const container = document.createElement('div');
+    container.setAttribute('data-b24-form', 'inline/27/de7ee2');
+    container.setAttribute('data-skip-moving', 'true');
+
+    // Вставляем его в DOM
+    if (formRef.current) {
+      formRef.current.innerHTML = ''; // очищаем, если перерендер
+      formRef.current.appendChild(container);
+    }
+
+    // Загружаем скрипт
     const script = document.createElement('script');
-    script.src = 'https://b24-yq6kji.bitrix24.site/bitrix/js/crm/form_loader.js';
-    script.async = true;
+    script.innerHTML = `
+      (function(w,d,u){
+        var s=d.createElement('script');
+        s.async=true;
+        s.src=u+'?'+(Date.now()/180000|0);
+        var h=d.getElementsByTagName('script')[0];
+        h.parentNode.insertBefore(s,h);
+      })(window,document,'https://bitrix24.transas.org/upload/crm/form/loader_27_de7ee2.js');
+    `;
     document.body.appendChild(script);
 
     return () => {
-      document.body.removeChild(script);
+      script.remove();
     };
   }, []);
 
@@ -48,11 +68,8 @@ export default function KnowMore() {
       </Box>
 
       <Box sx={{ width: { xs: '100%', md: '50%' } }}>
-        <div
-          className="bitrix24-form"
-          data-b24-form="inline/13/xwqcu9"
-          data-skip-moving="true"
-        ></div>
+        {/* Контейнер, в который Bitrix вставит форму */}
+        <div ref={formRef}></div>
       </Box>
     </Box>
   );
