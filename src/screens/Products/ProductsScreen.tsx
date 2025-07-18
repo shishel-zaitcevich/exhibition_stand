@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
 import { Box, Grid } from '@mui/material';
 import { Product } from '@/shared/Cards/Product/Product';
 import { productsList } from './consts';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export const ProductsScreen = () => {
   // State to track which row is being hovered (null if none)
@@ -16,28 +17,33 @@ export const ProductsScreen = () => {
   }
 
   return (
-      <Box sx={{ marginTop: 10 }}>
-        <Grid container spacing={4} direction="column">
-          {rows.map((row, rowIndex) => (
-            <Grid
-              container
-              key={rowIndex}
-              spacing={4}
-              onMouseEnter={() => setHoveredRow(rowIndex)}
-              onMouseLeave={() => setHoveredRow(null)}
-            >
-              {row.map((product) => (
-                <Grid
-                  key={product.title}
-                  size={{lg: 4, md: 6, sm: 12}}
-                  sx={{ display: 'flex' }}
+    <Box sx={{ marginTop: 10 }}>
+      <Grid container spacing={4} direction="column">
+        {rows.map((row, rowIndex) => (
+          <Grid
+            container
+            key={rowIndex}
+            spacing={4}
+            onMouseEnter={() => setHoveredRow(rowIndex)}
+            onMouseLeave={() => setHoveredRow(null)}
+          >
+            {row.map((product) => (
+              <Grid key={product.title} size={{ lg: 4, md: 6, sm: 12 }} sx={{ display: 'flex' }}>
+                <Link
+                  href={product.href}
+                  style={{
+                    color: 'inherit',
+
+                    textDecoration: 'none',
+                  }}
                 >
                   <Product {...product} open={hoveredRow === rowIndex} />
-                </Grid>
-              ))}
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+                </Link>
+              </Grid>
+            ))}
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 };

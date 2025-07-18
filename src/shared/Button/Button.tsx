@@ -52,10 +52,11 @@ const StyledButton = styled(Button)<{ primary: boolean }>(({ primary, theme }) =
   },
 
   [theme.breakpoints.down('sm')]: {
-    height: 32,
+    height: 38,
     borderRadius: 8,
     minWidth: 80,
     fontSize: 14,
+    lineHeight: '14px',
   },
 }));
 

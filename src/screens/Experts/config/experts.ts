@@ -19,4 +19,6 @@ export const experts = [
     role: 'Начальник отдела продаж сервисов данных',
     photoSrc: '/img/experts/oleinikov.png',
   },
+
 ]
+

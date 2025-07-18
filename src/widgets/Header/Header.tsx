@@ -17,6 +17,13 @@ export default function Header() {
         justifyContent: 'flex-end',
         alignItems: 'center',
         py: 2,
+
+        [theme.breakpoints.down('sm')]: {
+          height: 32,
+          borderRadius: 8,
+          minWidth: 80,
+          fontSize: 14,
+        },
       }}
     >
       {isMd ? (
@@ -26,6 +33,11 @@ export default function Header() {
           justifyContent="space-between"
           width="100%"
           gap="15px"
+          sx={{
+            [theme.breakpoints.down('sm')]: {
+              marginTop: '40px',
+            },
+          }}
         >
           <AppButton label="Регистрация" primary href={'register'} />
           <BurgerMenu links={navLinks} />
@@ -38,19 +50,22 @@ export default function Header() {
             gap="15px"
             marginRight={'172px'}
             marginTop={'20px'}
+            sx={{
+              [theme.breakpoints.down('lg')]: {
+                marginTop: '13px',
+              },
+            }}
           >
             {navLinks.map((link, index) => (
               <Box key={index}>
                 <AnchorLink href={link.href}>{link.label}</AnchorLink>
               </Box>
             ))}
-
-            {/* Обёртка со sticky только для кнопки */}
           </Box>
           <Box
             sx={{
               position: 'fixed',
-              top: 20, // расстояние от верхнего края
+              top: 20,
               zIndex: 1000,
             }}
           >
