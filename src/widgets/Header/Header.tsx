@@ -8,6 +8,7 @@ import BurgerMenu from '../BurgerMenu';
 export default function Header() {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
+
   return (
     <Box
       component="header"
@@ -23,21 +24,39 @@ export default function Header() {
           display="flex"
           alignItems="center"
           justifyContent="space-between"
-          width={'100%'}
+          width="100%"
           gap="15px"
         >
-          <AppButton label="Регистрация" primary />
+          <AppButton label="Регистрация" primary href={'register'} />
           <BurgerMenu links={navLinks} />
         </Box>
       ) : (
-        <Box display="flex" alignItems="center" gap="15px">
-          {navLinks.map((link, index) => (
-            <AnchorLink key={index} href={link.href}>
-              {link.label}
-            </AnchorLink>
-          ))}
-          <AppButton label="Регистрация" primary />
-        </Box>
+        <>
+          <Box
+            display="flex"
+            alignItems="center"
+            gap="15px"
+            marginRight={'172px'}
+            marginTop={'20px'}
+          >
+            {navLinks.map((link, index) => (
+              <Box key={index}>
+                <AnchorLink href={link.href}>{link.label}</AnchorLink>
+              </Box>
+            ))}
+
+            {/* Обёртка со sticky только для кнопки */}
+          </Box>
+          <Box
+            sx={{
+              position: 'fixed',
+              top: 20, // расстояние от верхнего края
+              zIndex: 1000,
+            }}
+          >
+            <AppButton label="Регистрация" href="#register" primary />
+          </Box>
+        </>
       )}
     </Box>
   );

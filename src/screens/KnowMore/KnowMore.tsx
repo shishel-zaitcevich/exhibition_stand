@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import BitrixScript from '@/shared/BitrixScript/BitrixScript';
 import { Paragraph } from '@/shared/Typography/Paragraph';
@@ -16,11 +16,11 @@ export default function KnowMore() {
         width: '100%',
         mx: 'auto',
         gap: 4,
-        margin: '80px 0',
+        margin: '100px 0',
       }}
       id={'register'}
     >
-      <Grid size={{ xs: 12, lg: 6 } }>
+      <Grid size={{ xs: 12, lg: 6 }}>
         <Title
           sx={{
             textAlign: 'left',
@@ -39,9 +39,9 @@ export default function KnowMore() {
           Оставьте свои контакты — мы свяжемся с вами, расскажем о наших решениях <br /> и
           договоримся о встрече на выставке.
         </Paragraph>
-      </Grid>  
+      </Grid>
 
-      <Grid size={{ xs: 12, lg: 6 } }>
+      <Grid size={{ xs: 12, lg: 6 }}>
         <BitrixScript />
       </Grid>
     </Grid>
