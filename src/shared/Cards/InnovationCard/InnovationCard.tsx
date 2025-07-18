@@ -10,6 +10,7 @@ interface InnovationCardProps {
   variant: 'black' | 'blue';
   logo: ReactNode;
   name: string;
+  href?: string;
   text: string;
   state: 'normal' | 'expanded' | 'collapsed';
   onHoverStart: () => void;
