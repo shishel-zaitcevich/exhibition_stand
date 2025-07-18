@@ -29,12 +29,7 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
         overflow: 'hidden',
         cursor: 'pointer',
         '&:hover': {
-          border: '2px ridge #999',
-          background: 'linear-gradient(135deg, rgb(0, 0, 0), #4a4a4a)',
-          borderBottomLeftRadius: '30px',
-          boxShadow: '0 9px 18px rgba(0, 0, 0, 0.4)',
-          padding: 2,
-          color: 'white',
+          top: -8,
         },
       }}
     >

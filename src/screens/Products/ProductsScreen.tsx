@@ -3,7 +3,6 @@
 import { Box, Grid } from '@mui/material';
 import { Product } from '@/shared/Cards/Product/Product';
 import { productsList } from './consts';
-import { Title } from '@/shared/Typography/Title';
 import { useState } from 'react';
 
 export const ProductsScreen = () => {
@@ -17,9 +16,7 @@ export const ProductsScreen = () => {
   }
 
   return (
-    <>
-      <Title>Новинки 2024-2026 годов</Title>
-      <Box sx={{ margin: '80px 0' }}>
+      <Box sx={{ marginTop: 10 }}>
         <Grid container spacing={4} direction="column">
           {rows.map((row, rowIndex) => (
             <Grid
@@ -42,6 +39,5 @@ export const ProductsScreen = () => {
           ))}
         </Grid>
       </Box>
-    </>
   );
 };
