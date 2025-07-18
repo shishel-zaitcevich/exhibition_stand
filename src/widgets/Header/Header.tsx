@@ -26,7 +26,7 @@ export default function Header() {
           width={'100%'}
           gap="15px"
         >
-          <AppButton label="Регистрация" href="#" primary />
+          <AppButton label="Регистрация" primary />
           <BurgerMenu links={navLinks} />
         </Box>
       ) : (
@@ -36,7 +36,7 @@ export default function Header() {
               {link.label}
             </AnchorLink>
           ))}
-          <AppButton label="Регистрация" href="#" primary />
+          <AppButton label="Регистрация" primary />
         </Box>
       )}
     </Box>

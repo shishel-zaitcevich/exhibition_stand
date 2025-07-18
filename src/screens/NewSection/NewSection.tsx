@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 
 export default function NewSection() {
   return (
-    <>
+    <Box id={'new'}>
       {/* Заголовок вне параллакс блока */}
       <Box
         sx={{
@@ -78,6 +78,6 @@ export default function NewSection() {
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }

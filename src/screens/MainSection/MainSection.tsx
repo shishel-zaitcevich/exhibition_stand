@@ -19,6 +19,7 @@ export default function MainSection() {
         color: '#FFFFFF',
         // p: 4,
         gap: 2,
+        position: 'relative',
       }}
     >
       <Box display="flex" flexDirection="column" gap={2} alignItems="flex-start" paddingTop="60px">
@@ -36,20 +37,26 @@ export default function MainSection() {
           justifyContent="flex-start"
           alignItems="center"
           gap={3}
-          mt={1}
+          mt={'130px'}
           width={'100%'}
         >
           <AppButton label={'Регистрация'} href={'#'} primary />
-          <AppButton label={'Забронировать встречу'} href={'#'} primary={false} />
+          <AppButton label={'Забронировать встречу'} href={'#meeting'} primary={false} />
         </Box>
       </Box>
-      <Box display="flex" flexDirection="column" alignItems="flex-end" justifyContent="flex-start">
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-end"
+        justifyContent="flex-start"
+        height={'100%'}
+      >
         <Image
           src="/img/tanker.png"
           alt="tanker"
           width={700}
           height={450}
-          style={{ objectFit: 'contain' }}
+          style={{ objectFit: 'contain', position: 'absolute', top: '0' }}
         />
 
         <CountdownTimer targetDate={new Date('2025-09-23T10:00:00')} />

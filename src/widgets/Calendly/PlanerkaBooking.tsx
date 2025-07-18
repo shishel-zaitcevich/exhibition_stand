@@ -41,6 +41,7 @@ export default function PlanerkaBooking() {
       </Paragraph>
 
       <Box
+        id={'meeting'}
         className="app-planerka-embed"
         data-planerka-embed="default"
         data-planerka-url="https://planerka.app/meet"
