@@ -1,32 +1,25 @@
+"use client"
+
+import BitrixScript from '@/shared/BitrixScript/BitrixScript';
 import { Paragraph } from '@/shared/Typography/Paragraph';
 import { Title } from '@/shared/Typography/Title';
-import { Box } from '@mui/material';
-import { useEffect } from 'react';
+import { Grid } from '@mui/material';
 
 export default function KnowMore() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://b24-yq6kji.bitrix24.site/bitrix/js/crm/form_loader.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
-    <Box
+    <Grid
+      container
+      spacing={4}
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        width: '90%',
+        width: '100%',
         mx: 'auto',
         gap: 4,
-        marginBottom: '80px',
+        margin: '80px 0',
       }}
     >
-      <Box sx={{ width: { xs: '100%', md: '50%' } }}>
+      <Grid size={{ xs: 12, lg: 6 } }>
         <Title
           sx={{
             textAlign: 'left',
@@ -34,7 +27,7 @@ export default function KnowMore() {
             color: '#FFFFFF',
             padding: 0,
             fontWeight: 600,
-            margin: '140px 0 80px 0',
+            margin: '20px 0',
           }}
         >
           Хотите узнать больше <br />
@@ -45,15 +38,11 @@ export default function KnowMore() {
           Оставьте свои контакты — мы свяжемся с вами, расскажем о наших решениях <br /> и
           договоримся о встрече на выставке.
         </Paragraph>
-      </Box>
+      </Grid>  
 
-      <Box sx={{ width: { xs: '100%', md: '50%' } }}>
-        <div
-          className="bitrix24-form"
-          data-b24-form="inline/13/xwqcu9"
-          data-skip-moving="true"
-        ></div>
-      </Box>
-    </Box>
+      <Grid size={{ xs: 12, lg: 6 } }>
+        <BitrixScript />
+      </Grid>
+    </Grid>
   );
 }
