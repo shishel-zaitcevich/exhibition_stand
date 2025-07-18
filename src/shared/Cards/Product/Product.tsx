@@ -23,13 +23,14 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
         padding: 2,
         flex: 1,
         opacity: 1,
-        transition: 'height 0.5s ease-in-out 0.2s, opacity 0.5s ease-in-out',
-        height: open ? 300 : 100,
+        transition:
+          'height 0.5s ease-in-out 0.2s, opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
+        height: open ? 300 : 150,
         position: 'relative',
         overflow: 'hidden',
         cursor: 'pointer',
         '&:hover': {
-          top: -8,
+          transform: 'translateY(-8px)',
         },
       }}
     >
@@ -48,17 +49,40 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
               justifyContent: 'center',
               alignItems: 'center',
               flex: 1,
-              zIndex: 2,
               borderRadius: 2,
               padding: '4px',
               boxSizing: 'content-box',
+              position: 'relative',
               backgroundColor: (theme) => theme.palette.background.default,
+              '&::after': {
+                width: '60%',
+                height: '60%',
+                content: "''",
+                position: 'absolute',
+                top: '-2px',
+                left: '-2px',
+                borderRadius: 2,
+                pointerEvents: 'none',
+                background: 'linear-gradient(135deg, blue 0%, rgba(65, 65, 244, 0.2) 20%, transparent 100%)',
+              },
+              '&::before': {
+                width: '60%',
+                height: '60%',
+                content: "''",
+                position: 'absolute',
+                bottom: '-2px',
+                right: '-2px',
+                borderRadius: 2,
+                pointerEvents: 'none',
+                background: 'linear-gradient(135deg, transparent 0%, rgba(0, 0, 255, 0.2) 95%, blue 100%)',
+              },
             }}
           >
             <Image src={icon} alt="icon" width={34} height={34} />
           </Box>
           <Typography
             variant="h5"
+            fontWeight="bold"
             sx={{
               display: '-webkit-box',
               WebkitLineClamp: 2,
@@ -75,7 +99,7 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
 
       <Typography
         variant="body1"
-        sx={{ zIndex: 2, opacity: open ? 1 : 0, transition: 'opacity 0.5s linear 0.3s' }}
+        sx={{ zIndex: 2, opacity: open ? 0.8 : 0, transition: 'opacity 0.5s linear 0.3s' }}
       >
         {description}
       </Typography>
