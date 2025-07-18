@@ -47,14 +47,14 @@ export default function Footer() {
           <Box display="flex" alignItems="center" gap={1}>
             <PhoneIcon fontSize="small" />
             <Typography variant="body2" fontSize="20px">
-              +7(495) 000-0000
+              +7 (812) 325-31-31
             </Typography>
           </Box>
 
           <Box display="flex" alignItems="center" gap={1}>
             <EmailIcon fontSize="small" />
             <Typography variant="body2" fontSize="20px">
-              info@transas.com
+              info@transas.org
             </Typography>
           </Box>
         </Box>
