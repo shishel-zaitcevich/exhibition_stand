@@ -162,6 +162,7 @@ export function InnovationCard({
                     fontSize: '12px',
                     lineHeight: '15px',
                     textAlign: variant === 'black' ? 'flex-start' : 'center',
+                    fontWeight: variant === 'black' ? '500' : '550',
                     position: 'relative',
                   }}
                 >
