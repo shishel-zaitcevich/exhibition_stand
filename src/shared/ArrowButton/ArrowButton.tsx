@@ -27,6 +27,7 @@ export const ArrowButton: React.FC<Props> = ({
         backgroundColor: (theme) =>  active ? theme.palette.primary.dark : '#ffffff',
         color: active ? '#ffffff' : '#031457',
         transition: 'all 0.3s ease',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         '& svg': {
             transform: active ? 'rotate(-45deg)' : undefined,
             transition: 'all 0.3s ease',
