@@ -17,6 +17,7 @@ export default function KnowMore() {
         mx: 'auto',
         gap: 4,
         margin: '100px 0',
+        marginBottom: 0,
       }}
       id={'register'}
     >
