@@ -40,7 +40,7 @@ export default function MainSection() {
           mt={'130px'}
           width={'100%'}
         >
-          <AppButton label={'Регистрация'} href={'#'} primary />
+          <AppButton label={'Регистрация'} href={'#register'} primary />
           <AppButton label={'Забронировать встречу'} href={'#meeting'} primary={false} />
         </Box>
       </Box>
