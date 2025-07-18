@@ -19,7 +19,7 @@ export default function Innovations() {
         color: '#fff',
       }}
     >
-      <Box sx={{ textAlign: 'center', mb: 6 }}>
+      <Box>
         <Title>35 лет инноваций для судоходства</Title>
       </Box>
 
