@@ -56,7 +56,7 @@ export default function Innovations() {
       <motion.div
         initial={{ opacity: 1, scale: 1, y: 0 }}
         animate={
-          inViewForward ? { opacity: 0, scale: 0.8, y: 100 } : { opacity: 1, scale: 1, y: 0 }
+          inViewForward ? { opacity: 0.7, scale: 1, y: -70 } : { opacity: 1, scale: 1, y: 0 }
         }
         transition={{ duration: 0.6, ease: 'easeInOut' }}
         style={{ display: 'flex', gap: 32, position: 'relative', zIndex: 1 }}

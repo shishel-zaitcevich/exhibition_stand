@@ -14,23 +14,35 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Title } from '@/shared/Typography/Title';
 import CloseIcon from '@mui/icons-material/Close';
 
+const navButtonStyles = (side: 'left' | 'right') => ({
+  position: 'absolute',
+  top: '50%',
+  [side]: 8,
+  transform: 'translateY(-50%)',
+  backgroundColor: 'rgba(0,0,0,0.4)',
+  color: '#fff',
+  zIndex: 10,
+  '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
+});
+
 export default function ImageSlider() {
   const [open, setOpen] = useState(false);
-  const [currentImg, setCurrentImg] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
 
-  const handleOpen = (src: string) => () => {
-    setCurrentImg(src);
+  const handleOpen = (index: number) => () => {
+    setCurrentIndex(index);
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-    setCurrentImg(null);
+    setCurrentIndex(null);
   };
 
   return (
     <Box>
       <Title>Фотографии с Нева 2023</Title>
+
       <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
         <Swiper
           modules={[Navigation]}
@@ -44,7 +56,7 @@ export default function ImageSlider() {
                 component="img"
                 src={src}
                 alt={`slide-${idx}`}
-                onClick={handleOpen(src)}
+                onClick={handleOpen(idx)}
                 sx={{
                   width: '100%',
                   height: 'auto',
@@ -63,40 +75,15 @@ export default function ImageSlider() {
           ))}
         </Swiper>
 
-        <IconButton
-          className="custom-swiper-prev"
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: 8,
-            transform: 'translateY(-50%)',
-            backgroundColor: 'rgba(0,0,0,0.4)',
-            color: '#fff',
-            zIndex: 10,
-            '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
-          }}
-        >
+        <IconButton className="custom-swiper-prev" sx={navButtonStyles('left')}>
           <ArrowBackIosNewIcon />
         </IconButton>
 
-        <IconButton
-          className="custom-swiper-next"
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            right: 8,
-            transform: 'translateY(-50%)',
-            backgroundColor: 'rgba(0,0,0,0.4)',
-            color: '#fff',
-            zIndex: 10,
-            '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
-          }}
-        >
+        <IconButton className="custom-swiper-next" sx={navButtonStyles('right')}>
           <ArrowForwardIosIcon />
         </IconButton>
       </Box>
 
-      {/* Модальное окно */}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -115,9 +102,7 @@ export default function ImageSlider() {
           sx={{
             position: 'relative',
             p: 0,
-
             background: 'transparent',
-            // borderRadius: '32px',
             overflow: 'hidden',
           }}
         >
@@ -127,97 +112,48 @@ export default function ImageSlider() {
           >
             <CloseIcon />
           </IconButton>
-          {currentImg && (
-            <Box
-              component="img"
-              src={currentImg}
-              alt="full-size"
-              sx={{
-                width: '100%',
-                height: 'auto',
-                display: 'block',
-                // borderRadius: '32px',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.6)',
-              }}
-            />
+
+          {typeof currentIndex === 'number' && (
+            <Box sx={{ position: 'relative' }}>
+              <Swiper
+                initialSlide={currentIndex}
+                modules={[Navigation]}
+                navigation={{
+                  nextEl: '.modal-swiper-next',
+                  prevEl: '.modal-swiper-prev',
+                }}
+                spaceBetween={16}
+                slidesPerView={1}
+              >
+                {images.map((src, idx) => (
+                  <SwiperSlide key={idx}>
+                    <Box
+                      component="img"
+                      src={src}
+                      alt={`modal-slide-${idx}`}
+                      sx={{
+                        width: '100%',
+                        height: 'auto',
+                        display: 'block',
+                        borderRadius: '12px',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.6)',
+                      }}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <IconButton className="modal-swiper-prev" sx={navButtonStyles('left')}>
+                <ArrowBackIosNewIcon />
+              </IconButton>
+
+              <IconButton className="modal-swiper-next" sx={navButtonStyles('right')}>
+                <ArrowForwardIosIcon />
+              </IconButton>
+            </Box>
           )}
         </DialogContent>
       </Dialog>
     </Box>
   );
 }
-
-// export default function ImageSlider() {
-//   return (
-//     <Box>
-//       <Title>Фотографии с Нева 2023</Title>
-//       <Box sx={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-//         <Swiper
-//           modules={[Navigation]}
-//           slidesPerView={4}
-//           spaceBetween={16}
-//           navigation={{
-//             nextEl: '.custom-swiper-next',
-//             prevEl: '.custom-swiper-prev',
-//           }}
-//         >
-//           {images.map((src, index) => (
-//             <SwiperSlide key={index}>
-//               <Box
-//                 component="img"
-//                 src={src}
-//                 alt={`slide-${index}`}
-//                 sx={{
-//                   width: '100%',
-//                   height: 'auto',
-//                   display: 'block',
-//                   filter: 'grayscale(100%)',
-//                   transition: 'filter 0.3s, transform 0.3s',
-//                   cursor: 'pointer',
-//                   borderRadius: '12px',
-//                   '&:hover': {
-//                     filter: 'grayscale(0%)',
-//                     transform: 'scale(1.05)',
-//                   },
-//                 }}
-//               />
-//             </SwiperSlide>
-//           ))}
-//         </Swiper>
-
-//         {/* Кнопки навигации */}
-//         <IconButton
-//           className="custom-swiper-prev"
-//           sx={{
-//             position: 'absolute',
-//             top: '50%',
-//             left: 8,
-//             transform: 'translateY(-50%)',
-//             backgroundColor: 'rgba(0,0,0,0.4)',
-//             color: '#fff',
-//             zIndex: 10,
-//             '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
-//           }}
-//         >
-//           <ArrowBackIosNewIcon />
-//         </IconButton>
-
-//         <IconButton
-//           className="custom-swiper-next"
-//           sx={{
-//             position: 'absolute',
-//             top: '50%',
-//             right: 8,
-//             transform: 'translateY(-50%)',
-//             backgroundColor: 'rgba(0,0,0,0.4)',
-//             color: '#fff',
-//             zIndex: 10,
-//             '&:hover': { backgroundColor: 'rgba(0,0,0,0.6)' },
-//           }}
-//         >
-//           <ArrowForwardIosIcon />
-//         </IconButton>
-//       </Box>
-//     </Box>
-//   );
-// }

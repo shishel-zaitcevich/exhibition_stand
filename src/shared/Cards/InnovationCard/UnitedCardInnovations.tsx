@@ -15,7 +15,7 @@ const cardStyles = {
     alignItems: 'flex-start',
     borderRadius: '26px',
     background:
-      'linear-gradient(180deg,rgba(200, 214, 229, 0.9) 0%,rgba(168, 192, 212, 0.9) 25%,rgba(122, 153, 184, 0.9) 50%,rgba(77, 107, 130, 0.9) 75%,rgba(44, 83, 100, 0.9) 100%)',
+      'linear-gradient(180deg,rgba(200, 214, 229, 1) 0%,rgba(168, 192, 212, 1) 25%,rgba(122, 153, 184, 1) 50%,rgba(77, 107, 130, 1) 75%,rgba(44, 83, 100, 1) 100%)',
     color: '#000000',
     boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
     textMaxWidth: '280px',
