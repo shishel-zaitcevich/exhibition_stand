@@ -88,6 +88,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
                 fontWeight: 600,
                 fontSize: {
                   xs: '18px',
+                  lg: '30px',
                 },
               }}
             >
@@ -103,6 +104,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
               fontWeight: 600,
               fontSize: {
                 xs: '12px',
+                lg: '20px',
               },
             }}
           >
