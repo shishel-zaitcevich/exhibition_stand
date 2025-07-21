@@ -11,12 +11,12 @@ export const Flashing: FC<Props> = ({ x, y, degree }) => {
   return (
     <Box
       sx={{
-        width: '100%',
-        height: 800,
+        width: '150%',
+        height: 900,
         position: 'absolute',
         top: `${y}%`,
         left: `${x}%`,
-        opacity: 0.2,
+        opacity: 0.3,
         zIndex: -1,
         transform: `rotate(${degree ?? 45}deg)`,
         background: (theme) =>
