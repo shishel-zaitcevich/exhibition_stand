@@ -96,7 +96,7 @@ export default function MainSection() {
           }}
         >
           <AppButton
-            label={'Регистрация'}
+            label={'Узнать больше'}
             href={'#register'}
             primary
             sx={{

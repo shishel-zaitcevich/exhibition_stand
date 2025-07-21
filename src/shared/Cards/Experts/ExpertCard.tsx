@@ -68,8 +68,8 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
           width={'206'}
           height={'211'}
           style={{
-            marginTop: name === 'Никита Сиваков' ? '5px' : 0,
-            width: name === 'Никита Сиваков' ? '200px' : 206,
+            marginTop: name === 'Никита Сиваков' || 'Евгений Корянов' ? '15px' : 0,
+            width: name === 'Никита Сиваков' || 'Евгений Корянов' ? '95%' : 206,
           }}
         />
       </Box>

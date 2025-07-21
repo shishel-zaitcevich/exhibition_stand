@@ -25,7 +25,7 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
         opacity: 1,
         transition:
           'height 0.5s ease-in-out 0.2s, opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
-        height: open ? 300 : 150,
+        height: open ? 350 : 150,
         position: 'relative',
         overflow: 'hidden',
         cursor: 'pointer',
@@ -87,7 +87,7 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
             fontWeight="bold"
             sx={{
               display: '-webkit-box',
-              WebkitLineClamp: 2,
+              WebkitLineClamp: open ? 3 : 2,
               WebkitBoxOrient: 'vertical',
               overflow: 'hidden',
               textOverflow: 'ellipsis',

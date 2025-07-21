@@ -39,7 +39,7 @@ export default function Header() {
             },
           }}
         >
-          <AppButton label="Регистрация" primary href={'register'} />
+          <AppButton label="Узнать больше" primary href={'register'} />
           <BurgerMenu links={navLinks} />
         </Box>
       ) : (
@@ -69,7 +69,7 @@ export default function Header() {
               zIndex: 1000,
             }}
           >
-            <AppButton label="Регистрация" href="#register" primary />
+            <AppButton label="Узнать больше" href="#register" primary />
           </Box>
         </>
       )}
