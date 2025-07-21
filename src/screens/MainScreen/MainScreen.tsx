@@ -16,9 +16,9 @@ export default function MainScreen() {
     <>
       <Header />
       <MainSection />
-      <ScrollFadeIn>
-        <Innovations />
-      </ScrollFadeIn>
+
+      <Innovations />
+
       <ScrollFadeIn>
         <NewSection />
       </ScrollFadeIn>
