@@ -87,7 +87,7 @@ export const Product: FC<Props> = ({ open, icon, title, description }) => {
             fontWeight="bold"
             sx={{
               display: '-webkit-box',
-              WebkitLineClamp: open ? 3 : 2,
+              WebkitLineClamp: 3,
               WebkitBoxOrient: 'vertical',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
