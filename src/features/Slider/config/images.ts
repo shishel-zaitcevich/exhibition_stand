@@ -5,4 +5,6 @@ export const images = [
     '/img/slider/4.jpg',
     '/img/slider/5.jpg',
     '/img/slider/6.jpg',
-    '/img/slider/7.jpg',]
+    '/img/slider/7.jpg',
+    '/img/slider/8.jpg',
+    ]
