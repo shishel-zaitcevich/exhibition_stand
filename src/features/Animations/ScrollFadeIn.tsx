@@ -24,7 +24,10 @@ interface ScrollFadeInProps {
 // }
 export default function ScrollFadeIn({ children, delay = 0.1, duration = 0.6 }: ScrollFadeInProps) {
   const ref = useRef(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('down');
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
 
   const inView = useInView(ref, {
     once: false,
@@ -32,11 +35,32 @@ export default function ScrollFadeIn({ children, delay = 0.1, duration = 0.6 }: 
     amount: 0.1,
   });
 
+  // Отслеживаем направление скролла
   useEffect(() => {
-    if (inView && !hasAnimated) {
-      setHasAnimated(true);
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY ? 'down' : 'up';
+      setScrollDirection(direction);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
+  // Логика анимации при входе в зону видимости
+  useEffect(() => {
+    if (inView && scrollDirection === 'down') {
+      // Запускаем анимацию при прокрутке вниз
+      setIsAnimated(false);
+      // Небольшая задержка для сброса состояния
+      setTimeout(() => {
+        setIsAnimated(true);
+        setAnimationKey((prev) => prev + 1);
+      }, 10);
     }
-  }, [inView, hasAnimated]);
+    // При прокрутке вверх ничего не делаем - элемент остается анимированным
+  }, [inView, scrollDirection]);
 
   const transitionConfig = useMemo(
     () => ({
@@ -47,20 +71,19 @@ export default function ScrollFadeIn({ children, delay = 0.1, duration = 0.6 }: 
     [duration, delay],
   );
 
-  const animateConfig = useMemo(() => {
-    if (hasAnimated) {
-      return { opacity: 1, y: 0 };
-    }
-    return inView ? { opacity: 1, y: 0 } : { opacity: 1, y: 50 };
-  }, [inView, hasAnimated]);
+  const animateConfig = useMemo(
+    () => (isAnimated ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }),
+    [isAnimated],
+  );
 
   return (
     <motion.div
       ref={ref}
+      key={animationKey} // Принудительный перерендер для повторной анимации
       initial={{ opacity: 0, y: 50 }}
       animate={animateConfig}
       transition={transitionConfig}
-      style={{ willChange: inView ? 'auto' : 'transform, opacity' }}
+      style={{ willChange: isAnimated ? 'auto' : 'transform, opacity' }}
     >
       {children}
     </motion.div>
