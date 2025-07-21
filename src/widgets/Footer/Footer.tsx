@@ -40,7 +40,7 @@ export default function Footer() {
           sx={{ fontSize: '20px', textAlign: 'center', marginBottom: '40px' }}
         >
           C 23 по 26 cентября 2025 года в Санкт-Петербурге, КВЦ <br />
-          Экспофорум.
+          Экспофорум Павильон F5, 245.
         </Typography>
 
         <Box display="flex" alignItems="center" gap={3} mt={1}>
