@@ -24,9 +24,9 @@ export const ExpertsSection = () => {
       >
         <Box sx={{ width: '100%' }}>
           <ExpertCard
-            name={'Алексей Зенин'}
-            role={'Директор, Бортовые системы и сервисы данных'}
-            photoSrc={'/img/experts/zenin.png'}
+            name={'Евгений Корянов'}
+            role={'CTO/System Architect'}
+            photoSrc={'/img/experts/koryanov.png'}
             sx={{ margin: '0 auto' }}
           />
         </Box>

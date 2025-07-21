@@ -1,8 +1,9 @@
-import Image from 'next/image';
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { AppButton } from '@/shared/Button/Button';
 import CountdownTimer from '@/features/CountdownTimer/CountdownTimer';
 import { Paragraph } from '@/shared/Typography/Paragraph';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 export default function MainSection() {
   const theme = useTheme();
@@ -10,6 +11,9 @@ export default function MainSection() {
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
   const isSm = useMediaQuery(theme.breakpoints.down('sm'));
   const isXs = useMediaQuery(theme.breakpoints.down('xs'));
+
+  const imageRef = useRef(null);
+  const inView = useInView(imageRef, { once: true, margin: '0px 0px -100px 0px' });
 
   return (
     <Box
@@ -105,7 +109,15 @@ export default function MainSection() {
               },
             }}
           />
-          <AppButton label={'Забронировать встречу'} href={'#meeting'} primary={false} />
+          <div
+            style={{
+              // boxShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
+              borderRadius: '12px',
+              filter: 'brightness(1.2)',
+            }}
+          >
+            <AppButton label="Забронировать встречу" href="#meeting" primary={false} />
+          </div>
         </Box>
       </Box>
       <Box
@@ -115,7 +127,8 @@ export default function MainSection() {
         justifyContent="flex-start"
         height={'100%'}
       >
-        <Image
+        <motion.img
+          ref={imageRef}
           src="/img/tanker.png"
           alt="tanker"
           width={700}
@@ -130,7 +143,26 @@ export default function MainSection() {
             ...(isSm && { width: '400px' }),
             opacity: isSm ? 0.5 : 1,
           }}
+          initial={{ x: 100, opacity: 0 }}
+          animate={inView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         />
+        {/* <Image
+          src="/img/tanker.png"
+          alt="tanker"
+          width={700}
+          height={450}
+          style={{
+            objectFit: 'contain',
+            position: 'absolute',
+            top: isLg ? '-80px' : '0',
+            zIndex: isLg || isMd || isSm || isXs ? -1 : 1,
+            ...(isSm && { right: '-30px' }),
+            ...(isMd && { right: '-70px' }),
+            ...(isSm && { width: '400px' }),
+            opacity: isSm ? 0.5 : 1,
+          }}
+        />  */}
 
         <CountdownTimer targetDate={new Date('2025-09-23T10:00:00')} />
       </Box>

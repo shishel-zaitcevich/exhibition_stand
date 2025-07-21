@@ -45,8 +45,8 @@ export default function PlanerkaBooking() {
         className="app-planerka-embed"
         data-planerka-embed="default"
         data-planerka-url="https://planerka.app/meet"
-        data-planerka-user="dlyavsyakogo-dimdvk"
-        data-planerka-event="vstrecha-na-60-minut"
+        data-planerka-user="yuriy-timoshin-adjnio"
+        data-planerka-event="vstrecha-na-30-minut"
         sx={{
           mt: 3,
           height: '730px',
@@ -58,3 +58,8 @@ export default function PlanerkaBooking() {
     </Paper>
   );
 }
+
+// <!-- Planerka widget start -->
+// <div class="app-planerka-embed" data-planerka-embed="default" data-planerka-url="https://planerka.app/meet" data-planerka-user="dlyavsyakogo-dimdvk" data-planerka-event="vstrecha-na-60-minut"></div>
+// <script src="https://planerka.app/meet/assets/external/embed.js?v=0.1"></script>
+// <!-- Planerka widget end -->
