@@ -17,7 +17,7 @@ export const Ray: FC<Props> = ({height, direction, offset, degree, accent}) => {
     [direction ?? 'top']: offset ?? 0,
     left: '-30%',
     transform: `rotate(${degree ?? 45}deg)`,
-    opacity: 0.1,
+    opacity: 0.3,
     zIndex: accent ? 1 : -1,
     transformOrigin: 'left center',
     background: 'radial-gradient(circle, #8AA5FF 0%, rgba(138, 165, 255, 0) 90%)',

@@ -41,8 +41,14 @@ export const Backstage = () => {
       <Ray offset={3150} degree={25} direction="bottom"/>
 
       <Flashing x={-40} y={4} />
-      <Flashing x={50} y={20} />
-      <Flashing x={-20} y={50} degree={20} />
+      <Flashing x={-20} y={10} />
+      <Flashing x={-10} y={20} />
+      <Flashing x={5} y={30} degree={10}/>
+      <Flashing x={-20} y={40} degree={20} />
+      <Flashing x={10} y={50} degree={20} />
+      <Flashing x={-20} y={70} degree={40} />
+      <Flashing x={-20} y={80} />
+      <Flashing x={-20} y={92} />
     </Box>
   );
 };
