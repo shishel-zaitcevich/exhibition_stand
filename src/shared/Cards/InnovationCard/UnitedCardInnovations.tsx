@@ -14,7 +14,7 @@ const cardStyles = {
     backgroundPosition: 'calc(50% +80px) 50%',
     backgroundRepeat: 'no-repeat',
     color: '#FFF',
-    // boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
+    boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
     textMaxWidth: '280px',
     overflow: 'hidden',
     // position: 'relative',
