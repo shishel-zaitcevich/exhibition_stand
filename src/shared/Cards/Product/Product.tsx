@@ -159,13 +159,14 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
             component={motion.h5}
             variant="h5"
             fontWeight="bold"
+            initial={{ x: 0 }} // Изначальное положение
             animate={{
+              x: hover ? -5 : 0, // Смещение влево на 50px при hover
               color: hover ? '#ffffff' : 'inherit',
             }}
             transition={{
-              duration: 0.3,
-              ease: 'easeInOut',
-              delay: hover ? 0.6 : 0, // Задержка как у фона
+              duration: 0.9,
+              ease: 'linear',
             }}
             sx={{
               display: '-webkit-box',
@@ -185,13 +186,13 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
       <motion.div
         initial={{ y: 0, opacity: open ? 0.8 : 0 }}
         animate={{
-          y: hover ? 60 : 0,
+          y: hover ? 80 : 0,
           opacity: hover ? 0 : 0.8,
         }}
         transition={{
-          duration: 0.4,
+          duration: 0.7,
           ease: 'easeInOut',
-          delay: hover ? 1 : 0, // Задержка при наведении
+          delay: hover ? 0.8 : 0,
         }}
         style={{
           position: 'relative',
@@ -212,7 +213,8 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
             delay: open ? 0.3 : 0, // Задержка 0.5s при открытии
           }}
           sx={{
-            transition: 'opacity 0.4s ease-in-out', // Дополнительная плавность
+            transition: 'opacity 0.4s ease-in-out',
+            // Дополнительная плавность
           }}
         >
           {description}
