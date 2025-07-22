@@ -28,7 +28,6 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
       sx={{
         borderRadius: 2,
         background: (theme) => theme.palette.background.paper,
-        border: '2px solid #ddd',
         padding: 2,
         flex: 1,
         opacity: 1,
@@ -45,9 +44,9 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
           <>
             {/* Background Image Layer */}
             <motion.div
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 1.1 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               style={{
                 position: 'absolute',
@@ -57,9 +56,12 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                 bottom: 0,
                 zIndex: 1,
                 backgroundImage: `url(${backgroundImage})`,
+                backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: 8,
+                minHeight: 150, // Установите нужную минимальную высоту
+                maxHeight: 350, // Ограничьте максимальную высоту
               }}
             />
             {/* Dark Overlay */}
@@ -75,7 +77,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                 right: 0,
                 bottom: 0,
                 zIndex: 2,
-                backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                backgroundColor: 'rgba(0, 0, 0, 0.1)',
                 borderRadius: 8,
               }}
             />
@@ -98,14 +100,14 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
           <AnimatePresence>
             {!hover && (
               <motion.div
-                initial={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.2, ease: 'easeInOut' }}
               >
                 <motion.div
-                  animate={{
-                    scale: hover ? 1.1 : 1,
-                  }}
+                  // animate={{
+                  //   scale: hover ? 1.1 : 1,
+                  // }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                 >
                   <Box
@@ -163,7 +165,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
             transition={{
               duration: 0.3,
               ease: 'easeInOut',
-              delay: hover ? 0.3 : 0, // Задержка как у фона
+              delay: hover ? 0.6 : 0, // Задержка как у фона
             }}
             sx={{
               display: '-webkit-box',
@@ -184,12 +186,12 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
         initial={{ y: 0, opacity: open ? 0.8 : 0 }}
         animate={{
           y: hover ? 60 : 0,
-          opacity: hover ? 0 : open ? 0.8 : 0,
+          opacity: hover ? 0 : 0.8,
         }}
         transition={{
           duration: 0.4,
           ease: 'easeInOut',
-          delay: hover ? 0.4 : 0, // Задержка при появлении фона
+          delay: hover ? 1 : 0, // Задержка при наведении
         }}
         style={{
           position: 'relative',
@@ -199,16 +201,18 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
         <Typography
           component={motion.p}
           variant="body1"
+          initial={{ opacity: 0 }} // Изначально текст невидим
           animate={{
+            opacity: open ? 1 : 0, // Появление текста при open
             color: hover ? '#ffffff' : 'inherit',
           }}
           transition={{
-            duration: 0.3,
+            duration: 0.4,
             ease: 'easeInOut',
-            delay: hover ? 0.3 : 0, // Синхронно с заголовком
+            delay: open ? 0.3 : 0, // Задержка 0.5s при открытии
           }}
           sx={{
-            transition: 'opacity 0.5s linear 0.3s',
+            transition: 'opacity 0.4s ease-in-out', // Дополнительная плавность
           }}
         >
           {description}

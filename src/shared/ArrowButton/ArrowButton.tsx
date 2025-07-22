@@ -11,11 +11,7 @@ type Props = {
   active?: boolean;
 };
 
-export const ArrowButton: React.FC<Props> = ({
-  onClick,
-  active,
-}) => {
-
+export const ArrowButton: React.FC<Props> = ({ onClick, active }) => {
   return (
     <Button
       sx={{
@@ -24,19 +20,19 @@ export const ArrowButton: React.FC<Props> = ({
         minWidth: 55,
         padding: 0,
         borderRadius: '8px',
-        backgroundColor: (theme) =>  active ? theme.palette.primary.dark : '#ffffff',
-        color: active ? '#ffffff' : '#031457',
+        backgroundColor: '#ffffff',
+        color: '#031457',
         transition: 'all 0.3s ease',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         '& svg': {
-            transform: active ? 'rotate(-45deg)' : undefined,
-            transition: 'all 0.3s ease',
-            stroke: active ? '#ffffff' : '#031457',
+          transform: active ? 'rotate(-45deg)' : undefined,
+          transition: 'all 0.3s ease',
+          stroke: '#031457',
 
-            '& path': {
-              fill: active ? '#ffffff' : '#031457',
-            },
+          '& path': {
+            fill: '#031457',
           },
+        },
       }}
       onClick={onClick}
     >
