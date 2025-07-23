@@ -9,7 +9,13 @@ interface ExpertCardProps {
   sx?: SxProps;
 }
 
-export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
+export const ExpertCard = ({
+  name,
+  role,
+  photoSrc,
+
+  sx,
+}: ExpertCardProps) => {
   return (
     <Box
       sx={{
@@ -65,13 +71,29 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
         <Image
           src={photoSrc}
           alt={name}
-          width={206}
+          // width={206}
+          width={240}
           height={211}
+          // height={211}
           style={{
-            width: '100%',
+            width:
+              name === 'Никита Сиваков' || name === 'Евгений Корянов'
+                ? '200px'
+                : name === 'Алексей Зенин'
+                ? '270px'
+                : '260px',
+            height: `auto`,
             objectFit: 'contain',
             position: 'relative',
-            top: 10,
+            top:
+              name === 'Никита Сиваков'
+                ? '10px'
+                : name === 'Евгений Корянов'
+                ? '0'
+                : name === 'Алексей Зенин'
+                ? '-20px'
+                : '-10px',
+            left: name === 'Никита Сиваков' ? '0' : name === 'Евгений Корянов' ? '0' : '-30px',
           }}
         />
       </Box>
@@ -80,11 +102,7 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
         <Typography variant="h6" fontWeight={700} fontSize={'30px'} mb={1} color={'#8da7ff'}>
           {name}
         </Typography>
-        <Typography
-          color={'#FFFFFF'}
-          fontSize={'26px'}
-          sx={{ marginTop: '20px', fontWeight: 300 }}
-        >
+        <Typography color={'#FFFFFF'} fontSize={'26px'} sx={{ marginTop: '20px', fontWeight: 300 }}>
           {role}
         </Typography>
       </Box>

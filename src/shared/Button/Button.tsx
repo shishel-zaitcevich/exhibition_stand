@@ -20,7 +20,7 @@ const StyledButton = styled(Button)<{ primary: boolean }>(({ primary, theme }) =
   borderRadius: 12,
   textTransform: 'none',
   fontSize: 16,
-  fontWeight: 500,
+  fontWeight: 300,
   backgroundColor: primary ? '#2934FF' : '#031457',
   color: '#ffffff',
   transition: 'all 0.3s ease',

@@ -31,7 +31,7 @@ export default function Footer() {
       </Box>
 
       <Box display="flex" flexDirection="column" gap={2} alignItems={'center'}>
-        <Typography variant="h4" component="h2" sx={{ fontSize: '50px', marginBottom: '30px' }}>
+        <Typography variant="h4" component="h2" sx={{ fontSize: '47px', marginBottom: '30px' }}>
           Увидимся на выставке!
         </Typography>
 
