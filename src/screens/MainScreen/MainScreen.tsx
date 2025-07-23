@@ -10,17 +10,12 @@ import MapSection from '../MapSection/MapSection';
 import NewSection from '../NewSection/NewSection';
 import { ProductsScreen } from '../Products/ProductsScreen';
 import ScrollFadeIn from '@/features/Animations/ScrollFadeIn';
-import { useEffect } from 'react';
 
 export default function MainScreen() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <>
       <Header />
       <MainSection />
-
       <Innovations />
 
       <ScrollFadeIn>
