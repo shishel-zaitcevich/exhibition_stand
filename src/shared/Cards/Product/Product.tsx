@@ -78,7 +78,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                 right: 0,
                 bottom: 0,
                 zIndex: 2,
-                backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 borderRadius: 8,
               }}
             />
@@ -139,7 +139,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                         borderRadius: 2,
                         pointerEvents: 'none',
                         background:
-                          'linear-gradient(135deg, blue 0%, rgba(65, 65, 244, 0.3) 20%, transparent 100%)',
+                          'linear-gradient(135deg, blue 0%, rgba(65, 65, 244, 0.5) 20%, transparent 100%)',
                       },
                       '&::before': {
                         width: '60%',
@@ -151,7 +151,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                         borderRadius: 2,
                         pointerEvents: 'none',
                         background:
-                          'linear-gradient(135deg, transparent 0%, rgba(0, 0, 255, 0.3) 95%, blue 100%)',
+                          'linear-gradient(135deg, transparent 0%, rgba(0, 0, 255, 0.5) 95%, blue 100%)',
                       },
                     }}
                   >

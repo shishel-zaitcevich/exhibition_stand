@@ -48,7 +48,7 @@ export default function Header() {
             display="flex"
             alignItems="center"
             gap="15px"
-            marginRight={'172px'}
+            marginRight={'195px'}
             marginTop={'20px'}
             sx={{
               [theme.breakpoints.down('lg')]: {
