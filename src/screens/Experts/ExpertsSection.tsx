@@ -22,17 +22,19 @@ export const ExpertsSection = () => {
         justifyContent="space-between"
         maxWidth="1250px"
       >
-        <Box sx={{ width: '100%' }}>
-          <ExpertCard
-            name={'Евгений Корянов'}
-            role={'CTO/System Architect'}
-            photoSrc={'/img/experts/koryanov.png'}
-            sx={{ margin: '0 auto' }}
-          />
-        </Box>
+        <Grid container size={{ lg: 12 }} sx={{ width: '100%', justifyContent: 'center' }}>
+          <Grid size={{ lg: 6 }}>
+            <ExpertCard
+              name={'Евгений Корянов'}
+              role={'CTO/System Architect'}
+              photoSrc={'/img/experts/koryanov.png'}
+              sx={{ margin: '0 auto' }}
+            />
+          </Grid>
+        </Grid>
 
         {experts.map((expert, index) => (
-          <Grid key={index}>
+          <Grid size={{ lg: 6 }} key={index}>
             <ExpertCard name={expert.name} role={expert.role} photoSrc={expert.photoSrc} />
           </Grid>
         ))}
