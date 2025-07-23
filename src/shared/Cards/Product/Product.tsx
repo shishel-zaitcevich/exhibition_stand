@@ -33,7 +33,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
         opacity: 1,
         transition: 'height 0.5s ease-in-out 0.2s',
         minWidth: '434px',
-        height: open ? 360 : 150,
+        height: open ? 350 : 150,
         position: 'relative',
         overflow: 'hidden',
         cursor: 'pointer',

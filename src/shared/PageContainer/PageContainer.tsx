@@ -8,10 +8,6 @@ export default function PageContainer({ children }: { children: React.ReactNode 
         width: '100%',
         mx: 'auto',
         px: 2,
-        // margin: '0 auto',
-        // display: 'flex',
-        // flexDirection: 'column',
-        // alignItems: 'center',
       }}
     >
       {children}

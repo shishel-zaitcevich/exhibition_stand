@@ -10,38 +10,8 @@ import MapSection from '../MapSection/MapSection';
 import NewSection from '../NewSection/NewSection';
 import { ProductsScreen } from '../Products/ProductsScreen';
 import ScrollFadeIn from '@/features/Animations/ScrollFadeIn';
-import { useEffect, useState } from 'react';
-import CompassPreloader from '@/shared/CompassPreloader/CompassPreloader';
-
-import { useMediaQuery } from '@mui/material';
 
 export default function MainScreen() {
-  const [mounted, setMounted] = useState(false);
-
-  const isMobile = useMediaQuery('(max-width:1250px)');
-
-  useEffect(() => {
-    setMounted(true);
-    window.scrollTo(0, 0); // Срабатывает, когда страница загружена на клиенте
-  }, []);
-
-  if (!mounted)
-    return (
-      <CompassPreloader
-        text1={'Поиск пути к контенту'}
-        text2={'Определяем направление к лучшему'}
-      />
-    );
-
-  if (isMobile) {
-    return (
-      <CompassPreloader
-        text1={'В настоящий момент мобильная версия находится в разработке.'}
-        text2={'Приносим свои извинения.'}
-      />
-    );
-  }
-
   return (
     <>
       <Header />

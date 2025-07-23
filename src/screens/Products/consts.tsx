@@ -24,7 +24,7 @@ export const productsList = [
       'Профессиональное навигационное ПО для мобильных платформ с преемственными интерфейсом морских систем — ваш персональный помощник в управлении автоматизированного управления картами.',
     icon: '/img/icons/image 54.svg',
     order: 3,
-    backgroundImage: '/img/products/HARPS.png',
+    backgroundImage: '/img/products/mobile.png',
   },
   {
     href: 'https://transas.ru/',

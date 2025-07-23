@@ -1,4 +1,5 @@
 import { Box, keyframes, Typography } from '@mui/material';
+import Image from 'next/image';
 
 const twinkle = keyframes`
   0% { opacity: 0.3; }
@@ -92,14 +93,14 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
       >
         <Box
           sx={{
-            width: { xs: '150px', sm: '200px' },
-            height: { xs: '150px', sm: '200px' },
+            width: { xs: '150px', sm: '100%' },
+            height: { xs: '150px', sm: '100%' },
             position: 'relative',
-            marginBottom: '40px',
+            marginBottom: '80px',
             background:
               'radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
             borderRadius: '50%',
-            border: '3px solid rgba(255,255,255,0.3)',
+            // border: '3px solid rgba(255,255,255,0.3)',
             boxShadow: '0 0 30px rgba(255,255,255,0.1), inset 0 0 30px rgba(255,255,255,0.05)',
             backdropFilter: 'blur(10px)',
           }}
@@ -123,11 +124,11 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                     position: 'absolute',
                     background: 'rgba(255,255,255,0.6)',
                     transformOrigin: 'center',
-                    width: '2px',
-                    height: '20px',
-                    top: '5px',
+                    width: '0',
+                    height: '0',
+                    // top: '5px',
                     left: '50%',
-                    marginLeft: '-1px',
+                    // marginLeft: '-1px',
                     transform: `rotate(${i * 90}deg)`,
                   }}
                 />
@@ -141,50 +142,24 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                 color: 'rgba(255,255,255,0.8)',
                 fontWeight: 600,
                 fontSize: '18px',
-                zIndex: 15, // Добавлен zIndex для букв, чтобы они были выше всех элементов
+
+                zIndex: -1, // Добавлен zIndex для букв, чтобы они были выше всех элементов
               }}
             >
-              <Typography
-                sx={{
+              <Image
+                src={'/img/windRose.png'}
+                alt={'windRose'}
+                width={240}
+                height={211}
+                style={{
+                  zIndex: -100,
+
                   position: 'absolute',
-                  transform: 'translate(-50%, -50%)',
-                  top: '15px',
-                  left: '50%',
-                }}
-              >
-                N{' '}
-                {/* Заменено Box на Typography для корректного рендеринга текста и устранения артефактов */}
-              </Typography>
-              <Typography
-                sx={{
-                  position: 'absolute',
-                  transform: 'translate(-50%, -50%)',
                   top: '50%',
-                  right: '15px',
-                }}
-              >
-                E {/* Заменено Box на Typography для консистентности */}
-              </Typography>
-              <Typography
-                sx={{
-                  position: 'absolute',
-                  transform: 'translate(-50%, -50%)',
-                  bottom: '15px',
                   left: '50%',
-                }}
-              >
-                S {/* Заменено Box на Typography для консистентности */}
-              </Typography>
-              <Typography
-                sx={{
-                  position: 'absolute',
                   transform: 'translate(-50%, -50%)',
-                  top: '50%',
-                  left: '15px',
                 }}
-              >
-                W {/* Заменено Box на Typography для консистентности */}
-              </Typography>
+              />
             </Box>
             <Box
               sx={{
@@ -192,7 +167,7 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                 width: '4px',
                 height: '80px',
                 background:
-                  'linear-gradient(to bottom, #ff4444 0%, #ff4444 50%, #ffffff 50%, #ffffff 100%)',
+                  'linear-gradient(to bottom, #ff4444 0%, #ff4444 50%, #000000 50%, #000000 100%)',
                 borderRadius: '2px',
                 top: '50%',
                 left: '50%',
@@ -200,6 +175,7 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                 transform: 'translate(-50%, -100%) rotate(0deg)',
                 animation: `${spin} 3s linear infinite`,
                 boxShadow: '0 0 10px rgba(255,68,68,0.5)',
+
                 '&:before': {
                   content: '""',
                   position: 'absolute',
@@ -213,23 +189,9 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                 },
               }}
             />
-            <Box
-              sx={{
-                position: 'absolute',
-                width: '12px',
-                height: '12px',
-                background: 'radial-gradient(circle, #ffffff 0%, #cccccc 100%)',
-                borderRadius: '50%',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 10,
-                boxShadow: '0 0 8px rgba(255,255,255,0.5)',
-              }}
-            />
           </Box>
         </Box>
-        <Box sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.9)' }}>
+        <Box sx={{ textAlign: 'center', color: 'rgba(255,255,255,0.9)', paddingTop: '100px' }}>
           <Typography
             sx={{
               fontSize: { xs: '20px', sm: '24px' },
@@ -252,7 +214,7 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
           >
             {text2}
           </Typography>
-          <Box sx={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+          <Box sx={{ display: 'flex', gap: '8px', alignItems: 'center', marginLeft: '20px' }}>
             {[...Array(3)].map((_, i) => (
               <Box
                 key={i}
