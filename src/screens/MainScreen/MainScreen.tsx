@@ -25,10 +25,21 @@ export default function MainScreen() {
     window.scrollTo(0, 0); // Срабатывает, когда страница загружена на клиенте
   }, []);
 
-  if (!mounted) return <CompassPreloader />;
+  if (!mounted)
+    return (
+      <CompassPreloader
+        text1={'Поиск пути к контенту'}
+        text2={'Определяем направление к лучшему'}
+      />
+    );
 
   if (isMobile) {
-    return <CompassPreloader />;
+    return (
+      <CompassPreloader
+        text1={'В настоящий момент мобильная версия находится в разработке.'}
+        text2={'Приносим свои извинения.'}
+      />
+    );
   }
 
   return (

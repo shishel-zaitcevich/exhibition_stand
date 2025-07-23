@@ -37,7 +37,7 @@ interface CompassProps {
   text2: string;
 }
 
-const CompassPreloader: React.FC = ({ text1, text2 }: CompassProps) => {
+const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
   return (
     <Box
       sx={{
@@ -239,7 +239,7 @@ const CompassPreloader: React.FC = ({ text1, text2 }: CompassProps) => {
               textShadow: '0 2px 4px rgba(0,0,0,0.3)',
             }}
           >
-            Поиск пути к контенту
+            {text1}
           </Typography>
           <Typography
             sx={{
@@ -250,7 +250,7 @@ const CompassPreloader: React.FC = ({ text1, text2 }: CompassProps) => {
               marginBottom: '20px',
             }}
           >
-            Определяем направление к лучшему
+            {text2}
           </Typography>
           <Box sx={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
             {[...Array(3)].map((_, i) => (
