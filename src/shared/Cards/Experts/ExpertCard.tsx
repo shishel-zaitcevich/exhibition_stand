@@ -13,15 +13,15 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
   return (
     <Box
       sx={{
-        width: '565px',
-        height: '260px',
+        width: '100%',
+        // height: 280,
         borderRadius: '20px',
         border: '1px solid #95ACF7',
         backgroundColor: 'rgba(217, 217, 217, 0)',
         position: 'relative',
         display: 'flex',
         alignItems: 'flex-start',
-        padding: '25px 40px',
+        padding: '30px',
         boxSizing: 'border-box',
         overflow: 'hidden', // Ensure the shine effect stays within bounds
         '&:hover::before': {
@@ -65,20 +65,26 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
         <Image
           src={photoSrc}
           alt={name}
-          width={'206'}
-          height={'211'}
+          width={206}
+          height={211}
           style={{
-            marginTop: name === 'Никита Сиваков' || 'Евгений Корянов' ? '15px' : 0,
-            width: name === 'Никита Сиваков' || 'Евгений Корянов' ? '95%' : 206,
+            width: '100%',
+            objectFit: 'contain',
+            position: 'relative',
+            top: 10,
           }}
         />
       </Box>
 
       <Box display="flex" flexDirection="column">
-        <Typography variant="h6" fontWeight={700} mb={1} color={'#8da7ff'}>
+        <Typography variant="h6" fontWeight={700} fontSize={'30px'} mb={1} color={'#8da7ff'}>
           {name}
         </Typography>
-        <Typography color={'#FFFFFF'} fontSize={'20px'}>
+        <Typography
+          color={'#FFFFFF'}
+          fontSize={'26px'}
+          sx={{ marginTop: '20px', fontWeight: 300 }}
+        >
           {role}
         </Typography>
       </Box>
