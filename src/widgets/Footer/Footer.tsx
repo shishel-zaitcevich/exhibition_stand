@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { Box, Typography } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
@@ -21,7 +20,7 @@ export default function Footer() {
       }}
     >
       <Box sx={{ flexShrink: 0 }}>
-        <Image
+        <img
           src="/img/sailboat.png"
           alt="sailboat"
           width={700}

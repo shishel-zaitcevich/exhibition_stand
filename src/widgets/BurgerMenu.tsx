@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { IconButton, Drawer, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
@@ -67,7 +66,7 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
             </AnchorLink>
           ))}
         </Box>
-        <Image
+        <img
           src="/img/sys.png"
           alt="system"
           width={450}
