@@ -2,7 +2,6 @@ import { Paragraph } from '@/shared/Typography/Paragraph';
 import { Title } from '@/shared/Typography/Title';
 import Radar from '@/widgets/Radar/Radar';
 import { Box } from '@mui/material';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function MapSection() {
@@ -31,7 +30,7 @@ export default function MapSection() {
             cursor: 'pointer',
           }}
         >
-          <Image
+          <img
             src="/img/map.png"
             alt="Карта выставки"
             width={455}

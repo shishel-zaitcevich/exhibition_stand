@@ -1,5 +1,4 @@
 import { Box, Stack, Typography } from '@mui/material';
-import Image from 'next/image';
 import { FC, useState } from 'react';
 import { ArrowButton } from '@/shared/ArrowButton/ArrowButton';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -14,9 +13,6 @@ interface Props {
 
 export const Product: FC<Props> = ({ open, icon, title, description, backgroundImage }) => {
   const [hover, setHover] = useState(false);
-
-  // Debug log
-  console.log('Product props:', { title, backgroundImage });
 
   return (
     <Box
@@ -155,7 +151,7 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                       },
                     }}
                   >
-                    <Image src={icon} alt="icon" width={34} height={34} />
+                    <img src={icon} alt="icon" width={34} height={34} />
                   </Box>
                 </motion.div>
               </motion.div>

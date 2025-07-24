@@ -1,6 +1,5 @@
 import { Box, Typography } from '@mui/material';
 import { SxProps } from '@mui/system';
-import Image from 'next/image';
 
 interface ExpertCardProps {
   name: string;
@@ -68,7 +67,7 @@ export const ExpertCard = ({
           mr: 4,
         }}
       >
-        <Image
+        <img
           src={photoSrc}
           alt={name}
           // width={206}

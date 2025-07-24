@@ -1,5 +1,4 @@
 import { Box, keyframes, Typography } from '@mui/material';
-import Image from 'next/image';
 
 const twinkle = keyframes`
   0% { opacity: 0.3; }
@@ -146,7 +145,7 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                 zIndex: -1, // Добавлен zIndex для букв, чтобы они были выше всех элементов
               }}
             >
-              <Image
+              <img
                 src={'/img/windRose.png'}
                 alt={'windRose'}
                 width={240}
