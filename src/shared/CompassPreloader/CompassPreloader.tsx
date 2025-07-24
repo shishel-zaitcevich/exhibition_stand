@@ -152,11 +152,13 @@ const CompassPreloader: React.FC<CompassProps> = ({ text1, text2 }) => {
                 height={211}
                 style={{
                   zIndex: -100,
-
+                  width: '240px',
+                  height: '240px',
                   position: 'absolute',
                   top: '50%',
                   left: '50%',
                   transform: 'translate(-50%, -50%)',
+                  marginLeft: '-3px',
                 }}
               />
             </Box>
