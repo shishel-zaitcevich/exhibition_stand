@@ -21,7 +21,7 @@ export default function MapSection() {
       >
         <Box
           component={Link}
-          href="/pdf/NEVA_2025_15.07.25_F_RUS_.pdf"
+          href="/pdf/NEVA_2025_17.07.25_F_RUS.pdf"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
