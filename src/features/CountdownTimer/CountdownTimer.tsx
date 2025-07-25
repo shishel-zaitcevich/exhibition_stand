@@ -37,25 +37,25 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
       display="flex"
       gap={2}
       position={'absolute'}
-      bottom={'-20.02px'}
       sx={{
         // position: { xs: 'relative', lg: 'absolute', xl: '-37px' },
         bottom: {
-          xs: '20.02px',
-          sm: '0px',
+          xs: '0',
+          // sm: '0px',
           md: '-25px',
           lg: '-30px',
           xl: '-37px',
         },
 
         left: {
+          xs: '0',
           md: '20px',
-          xs: '20px',
+          lg: 'auto',
           xl: 'auto',
         },
 
         right: {
-          md: 'auto',
+          xs: 'auto',
           lg: '10px',
           xl: '0',
         },

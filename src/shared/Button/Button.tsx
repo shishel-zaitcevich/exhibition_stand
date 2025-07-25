@@ -74,8 +74,8 @@ const StyledButton = styled(Button)<{ primary: boolean }>(({ primary, theme }) =
     borderRadius: 8,
     minWidth: 80,
     fontSize: 14,
-    lineHeight: '14px',
-    padding: '0 16px',
+    lineHeight: '14px', // Изменено с 10px на 14px для 0–599px
+    padding: '10px 16px',
   },
 
   [theme.breakpoints.down('xs')]: {
