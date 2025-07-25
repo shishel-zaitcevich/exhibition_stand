@@ -52,7 +52,7 @@ export default function RootLayout({
                 if (document.scripts[j].src === r) { return; } 
               }
               k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,a)
-            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=103482891", "ym");
 
             ym(103482891, "init", {
               ssr: true,
