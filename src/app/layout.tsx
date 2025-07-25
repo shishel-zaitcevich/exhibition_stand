@@ -7,6 +7,7 @@ import theme from './theme';
 import { Backstage } from '@/screens/Backstage';
 import Script from 'next/script';
 import Head from 'next/head';
+import { YandexMetrika } from '@/widgets/YandexMetrika/YandexMetrika';
 
 export default function RootLayout({
   children,
@@ -39,6 +40,7 @@ export default function RootLayout({
         </Head>
         <body>
           {children}
+          <YandexMetrika />
           <Backstage />
           <Script
             id="yandex-metrika"
