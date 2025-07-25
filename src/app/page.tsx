@@ -4,13 +4,13 @@ import PageContainer from '@/shared/PageContainer/PageContainer';
 
 import MainScreen from '@/screens/MainScreen/MainScreen';
 import CompassPreloader from '@/shared/CompassPreloader/CompassPreloader';
-import { useMediaQuery } from '@mui/material';
+// import { useMediaQuery } from '@mui/material';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
 
-  const isMobile = useMediaQuery('(max-width:1250px)');
+  // const isMobile = useMediaQuery('(max-width:1250px)');
 
   useEffect(() => {
     setMounted(true);
