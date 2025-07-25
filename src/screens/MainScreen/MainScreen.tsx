@@ -16,32 +16,32 @@ export default function MainScreen() {
     <>
       <Header />
       <MainSection />
-      <Innovations />
+      {/* <Innovations /> */}
 
-      <ScrollFadeIn>
+      {/* <ScrollFadeIn>
         <NewSection />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <ProductsScreen />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <ExpertsSection />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <MapSection />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <PlanerkaBooking />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <ImageSlider />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <KnowMore />
-      </ScrollFadeIn>
-      <ScrollFadeIn>
+      </ScrollFadeIn> */}
+      {/* <ScrollFadeIn>
         <Footer />
-      </ScrollFadeIn>
+      </ScrollFadeIn> */}
     </>
   );
 }

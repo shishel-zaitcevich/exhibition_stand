@@ -25,14 +25,14 @@ export default function Home() {
       />
     );
 
-  if (isMobile) {
-    return (
-      <CompassPreloader
-        text1={'В настоящий момент мобильная версия находится в разработке.'}
-        text2={'Приносим свои извинения.'}
-      />
-    );
-  }
+  // if (isMobile) {
+  //   return (
+  //     <CompassPreloader
+  //       text1={'В настоящий момент мобильная версия находится в разработке.'}
+  //       text2={'Приносим свои извинения.'}
+  //     />
+  //   );
+  // }
   return (
     <PageContainer>
       <MainScreen />

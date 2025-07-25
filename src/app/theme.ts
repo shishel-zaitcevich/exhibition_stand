@@ -21,11 +21,11 @@ const theme = createTheme({
 
   breakpoints: {
     values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1200,
-      xl: 1400,
+      xs: 0,    // от 0px до 360px
+      sm: 360,  // от 360px до 599px
+      md: 600,  // от 600px до 899px
+      lg: 900,  // от 900px до 1199px
+      xl: 1200, // от 1200px до 1399px
     }
   }
 });
