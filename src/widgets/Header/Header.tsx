@@ -7,7 +7,8 @@ import BurgerMenu from '../BurgerMenu';
 
 export default function Header() {
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.down('md'));
+
+  const isLg = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <Box
@@ -26,7 +27,7 @@ export default function Header() {
         },
       }}
     >
-      {isMd ? (
+      {isLg ? (
         <Box
           display="flex"
           alignItems="center"

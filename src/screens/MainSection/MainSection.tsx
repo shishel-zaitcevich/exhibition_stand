@@ -7,7 +7,8 @@ import { motion, useInView } from 'framer-motion';
 
 export default function MainSection() {
   const theme = useTheme();
-  const isLg = useMediaQuery(theme.breakpoints.down('lg'));
+  const isXl = useMediaQuery(theme.breakpoints.down('xl'));
+  const isLg = useMediaQuery(theme.breakpoints.between('lg', 'xl'));
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
   const isSm = useMediaQuery(theme.breakpoints.down('sm'));
   const isXs = useMediaQuery(theme.breakpoints.down('xs'));
@@ -20,40 +21,35 @@ export default function MainSection() {
       component="main"
       sx={{
         display: 'flex',
-        // flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'space-between',
         alignItems: 'center',
         maxWidth: '1440px',
         margin: '0 auto',
         marginTop: '30px',
         color: '#FFFFFF',
-        // p: 4,
         gap: 2,
         position: 'relative',
-
-        [theme.breakpoints.down('lg')]: {
-          padding: '0 20px',
-          pb: '40px',
+        pb: {
+          xs: '80px',
+          sm: '100px',
+          md: '90px',
+          lg: '0px',
+          xl: 0,
         },
-
-        [theme.breakpoints.down('md')]: {
-          justifyContent: 'center',
-          pt: 0,
-          pb: '140px',
-        },
+        ...(isMd && { justifyContent: 'center', pt: 0 }),
+        ...(isLg && { padding: '0 20px', pb: '80px' }),
       }}
     >
       <Box display="flex" flexDirection="column" gap={2} alignItems="flex-start" paddingTop="60px">
         <Typography
           variant="h1"
           sx={{
-            maxWidth: '550px',
             fontWeight: '600',
             fontSize: '48px',
             [theme.breakpoints.down('lg')]: {
               fontSize: '40px',
-              maxWidth: '450px',
             },
+            maxWidth: { xs: '100%', lg: '550px' },
           }}
         >
           Транзас и NAVX: инновации навигации на выставке Нева-2025
@@ -81,21 +77,39 @@ export default function MainSection() {
           justifyContent="flex-start"
           alignItems="center"
           gap={3}
-          mt={'130px'}
-          width={'100%'}
           sx={{
-            [theme.breakpoints.down('lg')]: {
-              mt: 0,
-              flexDirection: 'column',
-              alignItems: 'flex-start',
+            mt: {
+              xs: '30px',
+              sm: '0px',
+              xl: '130px',
             },
-            [theme.breakpoints.down('md')]: {
-              mt: 0,
-              flexDirection: 'row',
-              alignItems: 'flex-start',
+            gap: {
+              xs: 1,
+              sm: 1.5,
+              md: 2,
+              xl: 3,
             },
-            [theme.breakpoints.down('xs')]: {
-              flexDirection: 'column',
+            flexDirection: {
+              xs: 'column',
+              sm: 'row',
+            },
+            justifyContent: {
+              xs: 'center',
+              sm: 'flex-start',
+            },
+            alignItems: {
+              xs: 'flex-start',
+              xl: 'center',
+            },
+
+            right: {
+              xs: '-30px',
+              md: '-70px',
+            },
+
+            marginTop: {
+              md: '30px',
+              lg: '0px',
             },
           }}
         >
@@ -111,7 +125,6 @@ export default function MainSection() {
           />
           <div
             style={{
-              // boxShadow: '0 0 10px rgba(255, 255, 255, 0.2)',
               borderRadius: '12px',
               filter: 'brightness(1.2)',
             }}
@@ -126,6 +139,9 @@ export default function MainSection() {
         alignItems="flex-end"
         justifyContent="flex-start"
         height={'100%'}
+        sx={{
+          ...(isMd && { flexDirection: 'column' }),
+        }}
       >
         <motion.img
           ref={imageRef}
@@ -136,34 +152,19 @@ export default function MainSection() {
           style={{
             objectFit: 'contain',
             position: 'absolute',
-            top: isLg ? '-80px' : '0',
-            zIndex: isLg || isMd || isSm || isXs ? -1 : 1,
+            top: isXl ? '-80px' : '0',
+
+            zIndex: theme.breakpoints.between('xs', 'xl') ? -1 : 1,
+            ...(isXs || isSm || isMd ? { width: '100%', height: '100%' } : {}),
             ...(isSm && { right: '-30px' }),
-            ...(isMd && { right: '-70px' }),
-            ...(isSm && { width: '400px' }),
+            ...(isMd && { width: '400px', right: '2px' }),
+            ...(isLg && { width: '650px', right: '20px', top: '-20px' }),
             opacity: isSm ? 0.5 : 1,
           }}
           initial={{ x: 100, opacity: 0 }}
           animate={inView ? { x: 0, opacity: 1 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         />
-        {/* <Image
-          src="/img/tanker.png"
-          alt="tanker"
-          width={700}
-          height={450}
-          style={{
-            objectFit: 'contain',
-            position: 'absolute',
-            top: isLg ? '-80px' : '0',
-            zIndex: isLg || isMd || isSm || isXs ? -1 : 1,
-            ...(isSm && { right: '-30px' }),
-            ...(isMd && { right: '-70px' }),
-            ...(isSm && { width: '400px' }),
-            opacity: isSm ? 0.5 : 1,
-          }}
-        />  */}
-
         <CountdownTimer targetDate={new Date('2025-09-23T10:00:00')} />
       </Box>
     </Box>

@@ -24,8 +24,11 @@ export default function KnowMore() {
       <Grid size={{ xs: 12, lg: 6 }}>
         <Title
           sx={{
-            textAlign: 'left',
-            fontSize: '42px',
+            textAlign: {
+              xs: 'center', // центрируем для xs-md (0-899px)
+              lg: 'left', // оставляем исходное для lg+ (900px+)
+            },
+            fontSize: { xs: '24px', md: '30px', lg: '42px' },
             color: '#FFFFFF',
             padding: 0,
             fontWeight: 600,
@@ -36,7 +39,19 @@ export default function KnowMore() {
           или записаться на <br />
           встречу на выставке?
         </Title>
-        <Paragraph sx={{ maxWidth: '500px' }}>
+        <Paragraph
+          sx={{
+            maxWidth: '500px',
+            textAlign: {
+              xs: 'center', // центрируем для xs-md (0-899px)
+              lg: 'left', // оставляем исходное для lg+ (900px+)
+            },
+            mx: {
+              xs: 'auto', // центрируем блок для xs-md (0-899px)
+              lg: 0, // оставляем исходное для lg+ (900px+)
+            },
+          }}
+        >
           Оставьте свои контакты — мы свяжемся с вами, расскажем о наших решениях <br /> и
           договоримся о встрече на выставке.
         </Paragraph>
