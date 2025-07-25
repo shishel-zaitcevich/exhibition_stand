@@ -7,6 +7,7 @@ import theme from './theme';
 import { Backstage } from '@/screens/Backstage';
 import Script from 'next/script';
 import Head from 'next/head';
+import { YandexMetrika } from '@/widgets/YandexMetrika/YandexMetrika';
 
 export default function RootLayout({
   children,
@@ -39,6 +40,7 @@ export default function RootLayout({
         </Head>
         <body>
           {children}
+          <YandexMetrika />
           <Backstage />
           <Script
             id="yandex-metrika"
@@ -52,7 +54,7 @@ export default function RootLayout({
                 if (document.scripts[j].src === r) { return; } 
               }
               k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k,a)
-            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=103482891", "ym");
 
             ym(103482891, "init", {
               ssr: true,
