@@ -15,9 +15,9 @@ export const ArrowButton: React.FC<Props> = ({ onClick, active }) => {
   return (
     <Button
       sx={{
-        height: 55,
-        width: 55,
-        minWidth: 55,
+        height: { xs: '40px', sm: '45px', lg: '55px' },
+        width: { xs: '40px', sm: '45px', lg: '55px' },
+        minWidth: { xs: '40px', sm: '45px', lg: '55px' },
         padding: 0,
         borderRadius: '8px',
         backgroundColor: '#ffffff',

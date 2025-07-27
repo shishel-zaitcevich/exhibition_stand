@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 import { ArrowButton } from '@/shared/Button/ArrowButton';
 import { MotionCard } from './MotionCard';
 
-interface InnovationCardProps {
+export interface InnovationCardProps {
   variant: 'black' | 'blue';
   logo: ReactNode;
   name: string;
@@ -111,7 +111,7 @@ export function InnovationCard({
       <Typography
         sx={{
           mt: 3,
-          fontSize: 20,
+          fontSize: 18,
           fontWeight: 500,
           lineHeight: '25px',
           maxWidth: isExpanded ? '100%' : 280,
