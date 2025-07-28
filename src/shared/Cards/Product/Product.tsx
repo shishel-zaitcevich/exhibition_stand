@@ -44,7 +44,7 @@ export const Product: FC<Props> = ({
         padding: 2,
         flex: 1,
         opacity: 1,
-        transition: 'height 0.5s ease-in-out 0.2s',
+        transition: 'all 0.5s ease-in-out 0.2s',
         minWidth: variant === 'mobile' ? '330px' : '434px',
         // height: open ? 350 : 150,
         height: getHeight(), // ✅ адаптивная высота
