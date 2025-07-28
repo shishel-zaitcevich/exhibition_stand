@@ -1,5 +1,4 @@
 import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { SxProps } from '@mui/system';
 
 interface ExpertCardProps {
   name: string;
