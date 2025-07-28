@@ -20,7 +20,17 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
 
   return (
     <>
-      <IconButton onClick={toggle(true)} size="large" sx={{ color: 'common.white' }}>
+      <IconButton
+        onClick={toggle(true)}
+        size="large"
+        sx={{
+          color: 'common.white',
+          position: 'fixed',
+          right: '20px',
+          mixBlendMode: 'difference',
+          zIndex: 100,
+        }}
+      >
         <MenuIcon fontSize="inherit" />
       </IconButton>
 
@@ -31,14 +41,15 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
         PaperProps={{
           sx: {
             backgroundColor: '#031457',
-            width: '80vw',
+            width: '100vw',
             p: 3,
-            [theme.breakpoints.down('md')]: {
-              overflow: 'hidden',
-            },
-            [theme.breakpoints.down('sm')]: {
-              width: '100vw',
-            },
+            // [theme.breakpoints.down('md')]: {
+            //   overflow: 'hidden',
+            //   width: '90vw',
+            // },
+            // [theme.breakpoints.down('sm')]: {
+            //   width: '100vw',
+            // },
           },
         }}
       >
@@ -56,17 +67,17 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
             position: ' relative',
             [theme.breakpoints.down('md')]: {
               marginBottom: '50px',
-              gap: '5px',
+              gap: '15px',
             },
           }}
         >
           {links.map((link, i) => (
-            <AnchorLink key={i} href={link.href}>
-              {link.label}
-            </AnchorLink>
+            <Box key={i} onClick={toggle(false)}>
+              <AnchorLink href={link.href}>{link.label}</AnchorLink>
+            </Box>
           ))}
         </Box>
-        <img
+        {/* <img
           src="/img/sys.png"
           alt="system"
           width={450}
@@ -78,14 +89,15 @@ export default function BurgerMenu({ links }: BurgerMenuProps) {
             top: '150px',
             right: '-40px',
           }}
-        />
+        /> */}
         <AppButton
           label="Регистрация"
-          href="#"
+          href={'#register'}
           primary
           sx={{
             marginTop: '50px',
           }}
+          onClick={toggle(false)}
         />
       </Drawer>
     </>
