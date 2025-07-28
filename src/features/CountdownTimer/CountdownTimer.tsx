@@ -42,7 +42,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
         bottom: {
           xs: '0',
           // sm: '0px',
-          md: '-25px',
+          md: '-70px',
           lg: '-30px',
           xl: '-37px',
         },
@@ -59,6 +59,8 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
           lg: '10px',
           xl: '0',
         },
+        width: {xs: '100%', sm: '100%', md: 'auto'},
+        justifyContent: {sm: 'center', md: 'flex-start'}
       }}
     >
       {timeUnits.map((unit, index) => (

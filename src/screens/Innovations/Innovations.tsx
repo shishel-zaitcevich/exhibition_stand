@@ -84,8 +84,8 @@ export default function Innovations() {
         sx={{
           position: 'relative',
           zIndex: 2,
-          marginTop: {sm: '30px', lg: '80px'},
-          width: {lg: 'auto', sm: '100%'}
+          marginTop: {xs: '30px',sm: '30px', lg: '80px'},
+          width: {lg: 'auto', sm: '100%', xs: '100%'}
         }}
       >
         <UnitedCardInnovations />

@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, styled } from '@mui/material';
+import { Box, Button, styled } from '@mui/material';
 
 import Link from 'next/link';
 import React from 'react';
@@ -103,15 +103,15 @@ export const AppButton: React.FC<AppButtonProps> = ({
   // Если href начинается с #, то это якорная ссылка
   if (href && href.startsWith('#')) {
     return (
-      <a href={href} style={{ textDecoration: 'none' }}>
+      <Box component="a" href={href} sx={{ textDecoration: 'none', width: {xs: '100%', sm: '100%', md: 'auto'} }}>
         {button}
-      </a>
+      </Box>
     );
   }
 
   // Если href существует и не является якорной ссылкой, используем Link
   if (href) {
-    return <Link href={href}>{button}</Link>;
+    return <Box component={Link} href={href} sx={{width: {xs: '100%', sm: '100%', md: 'auto'}}}>{button}</Box>;
   }
 
   // Если href нет, возвращаем просто кнопку

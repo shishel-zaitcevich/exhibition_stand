@@ -54,7 +54,7 @@ export default function InnovationCards() {
       gap={4}
       justifyContent="center"
       ref={containerRef}
-      sx={{ flexDirection: { xs: 'column', lg: 'row' }, width: '100%' }}
+      sx={{ flexDirection: { xs: 'column', sm: 'column', lg: 'row' }, width: '100%' }}
     >
       {cards.map((c, i) => (
         <Link key={i} href={c.href} style={{ textDecoration: 'none', color: '#FFF' }}>
