@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { UnitedCardInnovations } from '@/shared/Cards/InnovationCard/UnitedCardInnovations';
 import { Title } from '@/shared/Typography/Title';
 import InnovationCards from '@/widgets/InnovationCards/InnovationCards';
@@ -9,15 +9,17 @@ import { motion } from 'framer-motion';
 export default function Innovations() {
   const ref = useRef<HTMLDivElement>(null);
   const [inViewForward, setInViewForward] = useState(false);
-  // const isMobile = useMediaQuery('(max-width:1199px)');
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const ratio = entry.intersectionRatio;
+        const startPosition = isMobile ? ratio >= 0.9 : ratio >= 0.6;
 
         // Прямое попадание на 50% — активировать
-        if (ratio >= 0.6) {
+        if (startPosition) {
           setInViewForward(true);
         }
 
@@ -36,7 +38,7 @@ export default function Innovations() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isMobile]);
 
   return (
     <Box
@@ -48,7 +50,8 @@ export default function Innovations() {
         alignItems: 'center',
         margin: '0 auto',
         color: '#fff',
-        maxHeight: { sx: 'auto', xl: '800px' },
+        maxHeight: { lg: '800px', sm: 'auto' },
+        width: '100%',
       }}
     >
       <Box>
@@ -61,25 +64,32 @@ export default function Innovations() {
           inViewForward ? { opacity: 0.7, scale: 1, y: -70 } : { opacity: 1, scale: 1, y: 0 }
         }
         transition={{ duration: 0.6, ease: 'easeInOut' }}
-        style={{ display: 'flex', gap: 32, position: 'relative', zIndex: 1 }}
+        style={{ display: 'flex', gap: 32, position: 'relative', zIndex: 1, width: '100%' }}
       >
         <InnovationCards />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 0, scale: 1 }}
+      <Box
+        component={motion.div}
+        initial={{ opacity: 0, y: isMobile ? 140 : 0, scale: 1 }}
+        whileInView={isMobile ? {y: 0} : undefined}
         animate={
-          inViewForward ? { opacity: 1, y: -420, scale: 1.05 } : { opacity: 0, y: 100, scale: 1 }
+          isMobile
+            ? { opacity: 1 }
+            : inViewForward
+            ? { opacity: 1, y: -420, scale: 1.05 }
+            : { opacity: 0, y: 100, scale: 1 }
         }
         transition={{ duration: 0.6, ease: 'easeInOut' }}
-        style={{
+        sx={{
           position: 'relative',
           zIndex: 2,
-          marginTop: '80px',
+          marginTop: {sm: '30px', lg: '80px'},
+          width: {lg: 'auto', sm: '100%'}
         }}
       >
         <UnitedCardInnovations />
-      </motion.div>
+      </Box>
     </Box>
     // <Box
     //   ref={ref}

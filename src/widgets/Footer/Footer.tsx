@@ -246,10 +246,6 @@ export default function Footer() {
           }}
         >
           <Box
-            component="a"
-            href="https://t.me/your_telegram_channel" // замените на вашу ссылку
-            target="_blank"
-            rel="noopener noreferrer"
             display="flex"
             alignItems="center"
             gap={1}
@@ -287,6 +283,7 @@ export default function Footer() {
             />
             <Link
               href={'https://t.me/transas_official'}
+              target="_blank"
               style={{ textDecoration: 'none', color: '#FFFFFF' }}
             >
               <Typography
