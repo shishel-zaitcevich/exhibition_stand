@@ -39,14 +39,14 @@ export default function Footer() {
           // Адаптивные стили для изображения
           width: {
             xs: '300px',
-            sm: '400px',
+            sm: '350px',
             md: '500px',
             lg: '600px',
             xl: '700px', // исходный размер
           },
           height: {
             xs: '300px',
-            sm: '400px',
+            sm: '350зч',
             md: '500px',
             lg: '600px',
             xl: '700px', // исходный размер
