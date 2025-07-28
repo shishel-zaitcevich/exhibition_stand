@@ -8,8 +8,8 @@ import KnowMore from '../KnowMore/KnowMore';
 import MainSection from '../MainSection/MainSection';
 import MapSection from '../MapSection/MapSection';
 import NewSection from '../NewSection/NewSection';
-import { ProductsScreen } from '../Products/ProductsScreen';
 import ScrollFadeIn from '@/features/Animations/ScrollFadeIn';
+import { ResponsiveProducts } from '../Products/ResponsiveProducts';
 
 export default function MainScreen() {
   return (
@@ -22,7 +22,8 @@ export default function MainScreen() {
         <NewSection />
       </ScrollFadeIn>
       <ScrollFadeIn>
-        <ProductsScreen />
+        {/* <ProductsScreen /> */}
+        <ResponsiveProducts />
       </ScrollFadeIn>
       <ScrollFadeIn>
         <ExpertsSection />

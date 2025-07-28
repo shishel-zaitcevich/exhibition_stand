@@ -72,6 +72,7 @@ export const InnovationCard = forwardRef<HTMLDivElement, InnovationCardProps>(
   ) => {
     const isExpanded = state === 'expanded';
     const isMobile = state === 'mobile';
+    const isBlack = variant === 'black' && !isMobile && !isExpanded;
 
     return (
       <MotionCard
@@ -136,15 +137,15 @@ export const InnovationCard = forwardRef<HTMLDivElement, InnovationCardProps>(
         <Typography
           sx={{
             mt: 3,
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: 500,
             lineHeight: '25px',
             maxWidth: isExpanded ? '100%' : 280,
-            color: '#FFFFFF',
+            color: isBlack ? 'black' : '#FFFFFF',
             position: 'relative',
             zIndex: 3,
             marginTop: { md: isExpanded ? '30px' : '60px', xs: '20px' },
-            textShadow: `0 0 2px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.4)`,
+            textShadow: isBlack ? 'none' : `0 0 2px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.4)`,
           }}
         >
           {text}

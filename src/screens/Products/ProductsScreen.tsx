@@ -37,7 +37,7 @@ export const ProductsScreen = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  <Product {...product} open={hoveredRow === rowIndex} />
+                  <Product {...product} open={hoveredRow === rowIndex} variant="desktop" />
                 </Link>
               </Grid>
             ))}

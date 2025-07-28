@@ -2,6 +2,7 @@ import { Box, Stack, Typography } from '@mui/material';
 import { FC, useState } from 'react';
 import { ArrowButton } from '@/shared/ArrowButton/ArrowButton';
 import { AnimatePresence, motion } from 'framer-motion';
+import Link from 'next/link';
 
 interface Props {
   open?: boolean;
@@ -9,10 +10,26 @@ interface Props {
   title: string;
   description: string;
   backgroundImage?: string; // Add background image prop
+  variant?: 'mobile' | 'tablet' | 'desktop';
+  href?: string;
 }
 
-export const Product: FC<Props> = ({ open, icon, title, description, backgroundImage }) => {
+export const Product: FC<Props> = ({
+  open,
+  icon,
+  title,
+  description,
+  backgroundImage,
+  variant = 'desktop',
+  href,
+}) => {
   const [hover, setHover] = useState(false);
+
+  const getHeight = () => {
+    if (variant === 'mobile') return 'auto';
+    if (variant === 'tablet') return 380;
+    return open ? 350 : 150;
+  };
 
   return (
     <Box
@@ -28,8 +45,10 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
         flex: 1,
         opacity: 1,
         transition: 'height 0.5s ease-in-out 0.2s',
-        minWidth: '434px',
-        height: open ? 350 : 150,
+        minWidth: variant === 'mobile' ? '330px' : '434px',
+        // height: open ? 350 : 150,
+        height: getHeight(), // ✅ адаптивная высота
+        maxHeight: variant === 'mobile' ? 'none' : getHeight(),
         position: 'relative',
         overflow: 'hidden',
         cursor: 'pointer',
@@ -52,13 +71,14 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
                 right: 0,
                 bottom: 0,
                 zIndex: 1,
+
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 borderRadius: 8,
-                minHeight: 150, // Установите нужную минимальную высоту
-                maxHeight: 350, // Ограничьте максимальную высоту
+                // minHeight: 150, // Установите нужную минимальную высоту
+                // maxHeight: 350, // Ограничьте максимальную высоту
               }}
             />
             {/* Dark Overlay */}
@@ -181,7 +201,13 @@ export const Product: FC<Props> = ({ open, icon, title, description, backgroundI
             {title}
           </Typography>
         </Stack>
-        <ArrowButton active={hover} />
+        {(variant === 'mobile' || variant === 'tablet') && href ? (
+          <Link href={href}>
+            <ArrowButton active={hover} />
+          </Link>
+        ) : (
+          <ArrowButton active={hover} />
+        )}
       </Stack>
 
       {open && !hover && (
