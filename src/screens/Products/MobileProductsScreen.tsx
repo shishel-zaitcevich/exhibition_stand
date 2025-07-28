@@ -12,7 +12,7 @@ export const MobileProductsScreen = () => {
 
   if (isXs) {
     return (
-      <Box sx={{ mt: 6, px: 2 }}>
+      <Box sx={{ mt: 6, overflow: 'hidden' }}>
         <Grid container direction="column" spacing={4} alignItems="center">
           {productsList.map((product, index) => {
             const from = index % 2 === 0 ? 'left' : 'right';

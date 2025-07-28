@@ -22,7 +22,6 @@ export default function MainScreen() {
         <NewSection />
       </ScrollFadeIn>
       <ScrollFadeIn>
-        {/* <ProductsScreen /> */}
         <ResponsiveProducts />
       </ScrollFadeIn>
       <ScrollFadeIn>

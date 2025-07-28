@@ -1,19 +1,31 @@
-import theme from '@/app/theme';
-import { Box, Typography } from '@mui/material';
-import { SxProps } from '@mui/system';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 
 interface ExpertCardProps {
   name: string;
   role: string;
   photoSrc: string;
-  sx?: SxProps;
+  style?: React.CSSProperties;
 }
 
-export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
+export const ExpertCard = ({ name, role, photoSrc, style }: ExpertCardProps) => {
+  const theme = useTheme();
+
+  const isMd = useMediaQuery(theme.breakpoints.down('md'));
+  const isSm = useMediaQuery(theme.breakpoints.down('sm'), { noSsr: true });
+  const isXs = useMediaQuery(theme.breakpoints.down('xs'));
+
+  const getLeftOffset = () => {
+    if (name === 'Никита Сиваков' || name === 'Евгений Корянов') {
+      return isXs || isSm || isMd ? '-20px' : '0';
+    }
+    return isXs || isSm || isMd ? '-60px' : '-30px';
+  };
+
   return (
     <Box
       sx={{
         width: '100%',
+        minWidth: '300px',
         maxWidth: '609px',
         borderRadius: '20px',
         border: '1px solid #95ACF7',
@@ -59,12 +71,12 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
           borderRadius: '15px',
           alignItems: 'center',
         },
-        ...sx,
+        ...style,
       }}
     >
       <Box
         sx={{
-          minWidth: '206px',
+          minWidth: { xs: '140px', lg: '206px' },
           height: '210px',
           position: 'relative',
           borderRadius: '15px',
@@ -115,19 +127,8 @@ export const ExpertCard = ({ name, role, photoSrc, sx }: ExpertCardProps) => {
                 : name === 'Алексей Зенин'
                 ? '-20px'
                 : '-10px',
-            left: name === 'Никита Сиваков' || name === 'Евгений Корянов' ? '0' : '-30px',
-            // Адаптивные стили для экранов до 899px
-            [theme.breakpoints.down('md')]: {
-              width: '140px',
-              top: 0,
-              left: 0,
-            },
-            // Адаптивные стили для экранов 900–1199px
-            [theme.breakpoints.between('lg', 'xl')]: {
-              width: '170px',
-              top: 0,
-              left: 0,
-            },
+            // left: name === 'Никита Сиваков' || name === 'Евгений Корянов' ? '0' : '-30px',
+            left: getLeftOffset(),
           }}
         />
       </Box>
