@@ -23,15 +23,15 @@ const StyledArrowButton = styled(Button)<{ isHover: boolean }>(({ isHover, theme
     fontSize: 28,
     transform: isHover ? 'rotate(-45deg)' : 'rotate(0)',
     transition: 'transform 0.3s ease, fill 0.3s ease',
+    [theme.breakpoints.down('lg')]: {
+    width: 20,
+  },
   },
 
   [theme.breakpoints.down('lg')]: {
     height: 40,
     width: 40,
-  },
-  [theme.breakpoints.down('sm')]: {
-    height: 32,
-    width: 32,
+    minWidth: 40,
   },
 }));
 

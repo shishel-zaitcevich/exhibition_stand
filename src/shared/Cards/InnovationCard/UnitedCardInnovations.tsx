@@ -1,44 +1,40 @@
 import { Box, Typography } from '@mui/material';
 
-const cardStyles = {
-  base: {
-    width: '900px',
-    height: '550px',
-    display: 'flex',
-    paddingLeft: '80px',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    borderRadius: '26px',
-    backgroundImage: `url('/img/cardBg.png')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'calc(50% +80px) 50%',
-    backgroundRepeat: 'no-repeat',
-    color: '#FFF',
-    // boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
-    textMaxWidth: '280px',
-    overflow: 'hidden',
-    position: 'relative',
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      backgroundColor: 'rgba(255, 255, 255, 0.05)', // Белая прозрачная маска (30% непрозрачности)
-      borderRadius: '26px', // Соответствует радиусу контейнера
-      zIndex: 1, // Над фоном, но под контентом
-    },
-  },
-};
-
 export const UnitedCardInnovations = () => {
-  const styles = {
-    ...cardStyles.base,
-  };
-
   return (
-    <Box sx={styles}>
+    <Box
+      sx={{
+        width: '100%',
+        maxWidth: '900px',
+        height: {sm: 300, md: '550px'},
+        display: 'flex',
+        paddingLeft: {sm: 'auto', md: '80px'},
+        padding: {sm: '20px', md: '80px'},
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        borderRadius: '26px',
+        backgroundImage: `url('/img/cardBg.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'calc(50% +80px) 50%',
+        backgroundRepeat: 'no-repeat',
+        color: '#FFF',
+        // boxShadow: 'inset 0px 2px 7.6px 0px rgba(64, 119, 149, 0.68)',
+        textMaxWidth: '280px',
+        overflow: 'hidden',
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0.05)', // Белая прозрачная маска (30% непрозрачности)
+          borderRadius: '26px', // Соответствует радиусу контейнера
+          zIndex: 1, // Над фоном, но под контентом
+        },
+      }}
+    >
       <Typography
         component="h1"
         sx={{

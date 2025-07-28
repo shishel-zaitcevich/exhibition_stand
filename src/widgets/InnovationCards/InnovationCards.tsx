@@ -1,12 +1,16 @@
 'use client';
 import { InnovationCard } from '@/shared/Cards/InnovationCard/InnovationCard';
 import { Logo } from '@/shared/Logos/Logo';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export default function InnovationCards() {
   const [hovered, setHovered] = useState<number | null>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const cards = [
     {
@@ -38,17 +42,27 @@ export default function InnovationCards() {
   ];
 
   const getState = (index: number) => {
+    if (isMobile) return 'mobile';
     if (hovered === null) return 'normal';
     if (hovered === index) return 'expanded';
     return 'collapsed';
   };
 
   return (
-    <Box display="flex" gap={4} justifyContent="center">
+    <Box
+      display="flex"
+      gap={4}
+      justifyContent="center"
+      ref={containerRef}
+      sx={{ flexDirection: { xs: 'column', lg: 'row' }, width: '100%' }}
+    >
       {cards.map((c, i) => (
         <Link key={i} href={c.href} style={{ textDecoration: 'none', color: '#FFF' }}>
           <InnovationCard
             {...c}
+            ref={(el: HTMLDivElement | null) => {
+              cardRefs.current[i] = el;
+            }}
             state={getState(i)}
             onHoverStart={() => setHovered(i)}
             onHoverEnd={() => setHovered(null)}
@@ -57,4 +71,4 @@ export default function InnovationCards() {
       ))}
     </Box>
   );
-}
+};
