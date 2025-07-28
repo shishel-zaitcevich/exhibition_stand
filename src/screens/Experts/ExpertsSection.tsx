@@ -25,12 +25,21 @@ export const ExpertsSection = () => {
         }}
       >
         <Grid container size={{ lg: 12 }} sx={{ width: '100%', justifyContent: 'center' }}>
-          <Grid size={{ lg: 6 }} margin={{ sx: 0, lg: '0 auto' }}>
+          <Grid
+            size={{ lg: 6 }}
+            sx={{
+              margin: { xs: 0, lg: '0 auto' },
+              maxWidth: '609px',
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
             <ExpertCard
               name={'Евгений Корянов'}
               role={'CTO/System Architect'}
               photoSrc={'/img/experts/koryanov.png'}
-              sx={{ margin: '0 auto' }}
+              style={{ margin: '0 auto' }}
             />
           </Grid>
         </Grid>

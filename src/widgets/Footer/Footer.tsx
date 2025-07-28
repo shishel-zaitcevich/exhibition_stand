@@ -149,7 +149,7 @@ export default function Footer() {
             //   xs: 'column',
             //   md: 'row', // возвращаем исходное
             // },
-            flexDirection: { xs: 'row', lg: 'column', xl: 'row' },
+            flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'column', xl: 'row' },
 
             gap: {
               xs: 1.5,
