@@ -4,12 +4,12 @@ export const UnitedCardInnovations = () => {
   return (
     <Box
       sx={{
-        width: {sm: '100%', lg: 900},
+        width: {xs: '100%', sm: '100%', lg: 900},
         maxWidth: '900px',
-        height: {sm: 300, lg: '550px'},
+        height: {xs: 300, sm: 300, lg: '550px'},
         display: 'flex',
-        paddingLeft: {sm: 'auto', lg: '80px'},
-        padding: {sm: '20px', lg: '80px'},
+        paddingLeft: {xs: 'auto', sm: 'auto', lg: '80px'},
+        padding: {xs: '20px', sm: '20px', lg: '80px'},
         justifyContent: 'flex-start',
         alignItems: 'center',
         borderRadius: '26px',

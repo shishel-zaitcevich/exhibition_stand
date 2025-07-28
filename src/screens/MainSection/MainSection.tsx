@@ -8,7 +8,7 @@ import { motion, useInView } from 'framer-motion';
 export default function MainSection() {
   const theme = useTheme();
   const isXl = useMediaQuery(theme.breakpoints.down('xl'));
-  const isLg = useMediaQuery(theme.breakpoints.between('lg', 'xl'));
+  const isLg = useMediaQuery(theme.breakpoints.up('md'));
   const isMd = useMediaQuery(theme.breakpoints.down('md'));
   const isSm = useMediaQuery(theme.breakpoints.down('sm'));
   const isXs = useMediaQuery(theme.breakpoints.down('xs'));
@@ -29,6 +29,7 @@ export default function MainSection() {
         color: '#FFFFFF',
         gap: 2,
         position: 'relative',
+        flexDirection: { xs: 'column', sm: 'column', lg: 'row' },
         pb: {
           xs: '80px',
           sm: '100px',
@@ -40,7 +41,13 @@ export default function MainSection() {
         ...(isLg && { padding: '0 20px', pb: '80px' }),
       }}
     >
-      <Box display="flex" flexDirection="column" gap={2} alignItems="flex-start" paddingTop="60px">
+      <Box
+        display="flex"
+        flexDirection="column"
+        gap={2}
+        alignItems="flex-start"
+        sx={{ paddingTop: { xs: '20px', sm: '20px', md: '60px' } }}
+      >
         <Typography
           variant="h1"
           sx={{
@@ -74,8 +81,6 @@ export default function MainSection() {
 
         <Box
           display="flex"
-          justifyContent="flex-start"
-          alignItems="center"
           gap={3}
           sx={{
             mt: {
@@ -91,11 +96,12 @@ export default function MainSection() {
             },
             flexDirection: {
               xs: 'column',
-              sm: 'row',
+              sm: 'column',
+              md: 'row',
             },
             justifyContent: {
               xs: 'center',
-              sm: 'flex-start',
+              md: 'flex-start',
             },
             alignItems: {
               xs: 'flex-start',
@@ -106,6 +112,7 @@ export default function MainSection() {
               xs: '-30px',
               md: '-70px',
             },
+            width: '100%',
 
             marginTop: {
               md: '30px',
@@ -118,47 +125,57 @@ export default function MainSection() {
             href={'#register'}
             primary
             sx={{
-              [theme.breakpoints.down('lg')]: {
+              [theme.breakpoints.down('md')]: {
                 width: '100%',
               },
             }}
           />
-          <div
-            style={{
+          <Box
+            sx={{
               borderRadius: '12px',
               filter: 'brightness(1.2)',
+              width: { xs: '100%', sm: '100%', md: 'auto' },
             }}
           >
-            <AppButton label="Забронировать встречу" href="#meeting" primary={false} />
-          </div>
+            <AppButton
+              label="Забронировать встречу"
+              href="#meeting"
+              primary={false}
+              sx={{
+                [theme.breakpoints.down('md')]: {
+                  width: '100%',
+                },
+              }}
+            />
+          </Box>
         </Box>
       </Box>
       <Box
         display="flex"
         flexDirection="column"
-        alignItems="flex-end"
-        justifyContent="flex-start"
         height={'100%'}
         sx={{
+          justifyContent: 'flex-start',
+          alignItems: 'flex-end',
           ...(isMd && { flexDirection: 'column' }),
         }}
       >
-        <motion.img
+        <Box
+          component={motion.img}
           ref={imageRef}
           src="/img/tanker.png"
           alt="tanker"
-          width={700}
           height={450}
-          style={{
+          sx={{
             objectFit: 'contain',
             position: 'absolute',
             top: isXl ? '-80px' : '0',
 
             zIndex: theme.breakpoints.between('xs', 'xl') ? -1 : 1,
-            ...(isXs || isSm || isMd ? { width: '100%', height: '100%' } : {}),
-            ...(isSm && { right: '-30px' }),
+            ...(isSm && { right: '30px' }),
             ...(isMd && { width: '400px', right: '2px' }),
             ...(isLg && { width: '650px', right: '20px', top: '-20px' }),
+            ...(isXs || isSm || isMd ? { width: '100%', height: '100%' } : {}),
             opacity: isSm ? 0.5 : 1,
           }}
           initial={{ x: 100, opacity: 0 }}

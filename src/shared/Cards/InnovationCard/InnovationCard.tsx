@@ -91,7 +91,7 @@ export const InnovationCard = forwardRef<HTMLDivElement, InnovationCardProps>(
           '&::before': {
             content: "''",
             position: 'absolute',
-            opacity: 0.6,
+            opacity: isMobile ? 0.6 : 1,
             top: 0,
             left: 0,
             width: '100%',
@@ -234,12 +234,12 @@ export const InnovationCard = forwardRef<HTMLDivElement, InnovationCardProps>(
                   borderRight: idx < (stats.length - 1) ? '2px solid gray' : 'none'
                 }}
               >
-                <Typography sx={{ fontWeight: 'bold', fontSize: '20px', textAlign: 'center' }}>
+                <Typography sx={{ fontWeight: 'bold', fontSize: {xs: '18px', sm: '18px', md: '20px'}, textAlign: 'center' }}>
                   {item.value}
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: '12px',
+                    fontSize: {xs: '8px', sm: '8px', md: '12px'},
                     lineHeight: '15px',
                     textAlign: 'center',
                     position: 'relative',
