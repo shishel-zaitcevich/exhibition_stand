@@ -36,9 +36,9 @@ export const ExpertsSection = () => {
             }}
           >
             <ExpertCard
-              name={'Евгений Корянов'}
-              role={'CTO/System Architect'}
-              photoSrc={'/img/experts/koryanov.png'}
+              name={'Алексей Зенин'}
+              role={'Директор, Бортовые системы и сервисы данных'}
+              photoSrc={'/img/experts/zenin.png'}
               style={{ margin: '0 auto' }}
             />
           </Grid>

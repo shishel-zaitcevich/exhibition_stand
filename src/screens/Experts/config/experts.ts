@@ -1,8 +1,8 @@
 export const experts = [
         {
-    name: 'Алексей Зенин',
-    role: 'Директор, Бортовые системы и сервисы данных',
-    photoSrc: '/img/experts/zenin.png',
+      name:'Евгений Корянов',
+      role:'CTO/System Architect',
+      photoSrc:'/img/experts/koryanov.png'
   },
 
   {
