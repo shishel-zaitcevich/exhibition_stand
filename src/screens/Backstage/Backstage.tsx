@@ -2,7 +2,11 @@ import { Flashing } from '@/shared/Flashing';
 import { Ray } from '@/shared/Ray/Ray';
 import { Box } from '@mui/material';
 
-export const Backstage = () => {
+interface BackstageProps {
+  isThankPage?: boolean;
+}
+
+export const Backstage = ({ isThankPage }: BackstageProps) => {
   return (
     <Box
       sx={{
@@ -14,6 +18,7 @@ export const Backstage = () => {
         height: '100%',
         overflow: 'hidden',
         zIndex: -100,
+        backgroundColor: isThankPage ? '#000000' : undefined,
       }}
     >
       <Ray offset={-200} degree={36} height={12} />
