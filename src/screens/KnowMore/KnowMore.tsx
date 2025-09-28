@@ -25,8 +25,8 @@ export default function KnowMore() {
         <Title
           sx={{
             textAlign: {
-              xs: 'center', // центрируем для xs-md (0-899px)
-              lg: 'left', // оставляем исходное для lg+ (900px+)
+              xs: 'center',
+              lg: 'left',
             },
             fontSize: { xs: '24px', md: '30px', lg: '42px' },
             color: '#FFFFFF',
@@ -43,12 +43,12 @@ export default function KnowMore() {
           sx={{
             maxWidth: '500px',
             textAlign: {
-              xs: 'center', // центрируем для xs-md (0-899px)
-              lg: 'left', // оставляем исходное для lg+ (900px+)
+              xs: 'center',
+              lg: 'left',
             },
             mx: {
-              xs: 'auto', // центрируем блок для xs-md (0-899px)
-              lg: 0, // оставляем исходное для lg+ (900px+)
+              xs: 'auto',
+              lg: 0,
             },
           }}
         >

@@ -5,7 +5,7 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: 'Новинки 2025', href: '#new' },
+  { label: 'Новинки 2024-2026', href: '#new' },
   { label: 'Эксперты', href: '#experts' },
   { label: 'Как нас найти', href: '#map' },
   { label: 'Контакты', href: '#contacts' },

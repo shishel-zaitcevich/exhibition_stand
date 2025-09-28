@@ -40,7 +40,7 @@ export default function Header() {
             },
           }}
         >
-          <AppButton label="Узнать больше" primary href={'register'} />
+          <AppButton label="Узнать больше" primary href={'#register'} />
           <BurgerMenu links={navLinks} />
         </Box>
       ) : (
